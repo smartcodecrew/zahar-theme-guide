@@ -102,7 +102,10 @@
     .price-chip strong {
       font-family: var(--display); font-size: 1.35rem; color: var(--primary);
     }
-    .price-chip span { color: var(--muted); font-size: .85rem; }
+    .price-chip .old-price {
+      color: var(--muted); font-size: .95rem; text-decoration: line-through;
+    }
+    .price-chip span.note { color: var(--muted); font-size: .85rem; }
 
     .hero-visual {
       border-radius: calc(var(--radius) + 6px); overflow: hidden;
@@ -364,8 +367,9 @@
             <a class="btn btn-gold" href="#buy">السعر والتواصل</a>
           </div>
           <div class="price-chip">
-            <strong>تواصل لمعرفة السعر</strong>
-            <span>دفعة واحدة · تخصيص ودعم فني</span>
+            <strong>460 ر.س</strong>
+            <span class="old-price">700 ر.س</span>
+            <span class="note">دفعة واحدة · تخصيص ودعم فني</span>
           </div>
           <div class="contact-row">
             <a class="contact-pill" href="mailto:smartcodecrew@gmail.com">✉ smartcodecrew@gmail.com</a>
@@ -721,11 +725,11 @@
             </a>
 
             <a class="sec-card" href="#sec-10-ggallery" data-cat="media">
-              <div class="card-thumb missing">بدون لقطة</div>
+              <div class="card-thumb"><img src="assets/sections/ggallery.png" alt="مجموعة الصور" loading="lazy" /></div>
               <span class="sec-num">10</span>
               <h3>مجموعة الصور</h3>
-              <p>معرض صور مربّع.</p>
-              
+              <p>معرض صور / بنرات عمودية متعددة — مناسب لعروض المنتجات والحملات.</p>
+              <span class="live">في المعاينة: عناية مرطبة بالبشرة</span>
               <div class="sec-meta">
                 <span>7 إعداد</span>
                 <span>الوسائط والمعارض</span>
@@ -817,11 +821,11 @@
             </a>
 
             <a class="sec-card" href="#sec-18-reels-section" data-cat="media">
-              <div class="card-thumb missing">بدون لقطة</div>
+              <div class="card-thumb"><img src="assets/sections/reels-section.png" alt="الريلز" loading="lazy" /></div>
               <span class="sec-num">18</span>
               <h3>الريلز</h3>
-              <p>ريلز عمودية بأسلوب سوشيال.</p>
-              
+              <p>ريلز عمودية بأسلوب سوشيال مع بطاقة منتج وسعر أسفل كل ريل.</p>
+              <span class="live">في المعاينة: مفضلات المشاهير</span>
               <div class="sec-meta">
                 <span>8 إعداد</span>
                 <span>الوسائط والمعارض</span>
@@ -1185,22 +1189,22 @@
                 <div>
                   <span class="cat-pill">الوسائط والمعارض</span>
                   <h2>مجموعة الصور</h2>
-                  <p class="lead">معرض صور مربّع.</p>
-                  
-                  <div class="badges"><span class="badge">صورة المعرض: <strong>750 × 750</strong></span></div>
+                  <p class="lead">معرض صور / بنرات عمودية متعددة — مناسب لعروض المنتجات والحملات.</p>
+                  <span class="live">في المعاينة: عناية مرطبة بالبشرة</span>
+                  <div class="badges"><span class="badge">صورة المعرض / البنر: <strong>750 × 750 أو عمودي حسب التصميم</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
                   <code>ggallery.jinja</code>
                 </div>
               </header>
-              <div class="shot-missing">لا توجد لقطة من المعاينة لهذا السكشن حالياً</div>
+              <figure class="detail-shot"><img src="assets/sections/ggallery.png" alt="مجموعة الصور" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المعرض</td><td><code>750 × 750</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المعرض / البنر</td><td><code>750 × 750 أو عمودي حسب التصميم</code></td></tr></tbody></table>
             </div>
-              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>المربّع يضمن تناسق الشبكة.</li></ul></div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>المقاس المربّع أو العمودي حسب تصميم البطاقات.</li><li>وحّد نسبة الصور داخل نفس الصف.</li></ul></div>
               <div class="panel">
                 <h4>جدول الإعدادات (7)</h4>
                 <div class="table-wrap">
@@ -1449,22 +1453,22 @@
                 <div>
                   <span class="cat-pill">الوسائط والمعارض</span>
                   <h2>الريلز</h2>
-                  <p class="lead">ريلز عمودية بأسلوب سوشيال.</p>
-                  
-                  <div class="badges"><span class="badge">فيديو الريل: <strong>1080 × 1920 (9:16)</strong></span></div>
+                  <p class="lead">ريلز عمودية بأسلوب سوشيال مع بطاقة منتج وسعر أسفل كل ريل.</p>
+                  <span class="live">في المعاينة: مفضلات المشاهير</span>
+                  <div class="badges"><span class="badge">صورة/فيديو الريل: <strong>1080 × 1920 (9:16)</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
                   <code>reels-section.jinja</code>
                 </div>
               </header>
-              <div class="shot-missing">لا توجد لقطة من المعاينة لهذا السكشن حالياً</div>
+              <figure class="detail-shot"><img src="assets/sections/reels-section.png" alt="الريلز" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>فيديو الريل</td><td><code>1080 × 1920 (9:16)</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة/فيديو الريل</td><td><code>1080 × 1920 (9:16)</code></td></tr></tbody></table>
             </div>
-              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>النسبة 9:16.</li></ul></div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>النسبة العمودية (9:16) هي الأنسب.</li><li>اجعل مدة الفيديو/المحتوى قصيرة.</li><li>اربط كل ريل بمنتج واضح.</li></ul></div>
               <div class="panel">
                 <h4>جدول الإعدادات (8)</h4>
                 <div class="table-wrap">
@@ -1632,7 +1636,7 @@
     <div class="wrap" id="buy">
       <div class="cta">
         <h2>جاهز تنقل متجرك لمستوى ثيم زهرة؟</h2>
-        <p><strong>تواصل لمعرفة السعر</strong> — دفعة واحدة · تخصيص ودعم فني</p>
+        <p><strong>460 ر.س</strong> <span style="text-decoration:line-through;opacity:.75">700 ر.س</span> — دفعة واحدة · تخصيص ودعم فني</p>
         <a class="btn btn-gold" href="https://doyftt.dev.zid.store/ar/?theme=8a4af4f7-7c81-4c0c-a672-82b970f4a2cb&md_token=Zt4meo486fHGqn7eu0wHjYkp4ToWWuhutsf3wRMpO7y7J6sAzv98K0mVAT7Udbn5&previewMode=true" target="_blank" rel="noopener">شاهد المعاينة</a>
         <a class="btn btn-ghost" href="https://dashboard.zid.sa/ar-sa/stores/641897/theme-editor/8a4af4f7-7c81-4c0c-a672-82b970f4a2cb" target="_blank" rel="noopener">محرر التخصيص</a>
         <div class="contact-row">

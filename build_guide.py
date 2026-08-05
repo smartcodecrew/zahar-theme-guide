@@ -10,7 +10,8 @@ DOCS = ROOT / "docs"
 # —— Brand / commercial ——
 THEME_NAME_AR = "زهرة"
 THEME_NAME_EN = "Zahra"
-THEME_PRICE = "تواصل لمعرفة السعر"
+THEME_PRICE = "460 ر.س"
+THEME_PRICE_OLD = "700 ر.س"
 THEME_PRICE_NOTE = "دفعة واحدة · تخصيص ودعم فني"
 CONTACT_EMAIL = "smartcodecrew@gmail.com"
 CONTACT_PHONE = "01145828786"
@@ -245,10 +246,11 @@ ENRICH = {
         "category": "media",
     },
     "ggallery.schema.json": {
-        "desc": "معرض صور مربّع.",
-        "tips": ["المربّع يضمن تناسق الشبكة."],
-        "sizes": [{"label": "صورة المعرض", "size": "750 × 750"}],
+        "desc": "معرض صور / بنرات عمودية متعددة — مناسب لعروض المنتجات والحملات.",
+        "tips": ["المقاس المربّع أو العمودي حسب تصميم البطاقات.", "وحّد نسبة الصور داخل نفس الصف."],
+        "sizes": [{"label": "صورة المعرض / البنر", "size": "750 × 750 أو عمودي حسب التصميم"}],
         "category": "media",
+        "live": "عناية مرطبة بالبشرة",
     },
     "video.schema.json": {
         "desc": "سكشن فيديو للمنتج أو الحملة.",
@@ -257,10 +259,11 @@ ENRICH = {
         "category": "media",
     },
     "reels-section.schema.json": {
-        "desc": "ريلز عمودية بأسلوب سوشيال.",
-        "tips": ["النسبة 9:16."],
-        "sizes": [{"label": "فيديو الريل", "size": "1080 × 1920 (9:16)"}],
+        "desc": "ريلز عمودية بأسلوب سوشيال مع بطاقة منتج وسعر أسفل كل ريل.",
+        "tips": ["النسبة العمودية (9:16) هي الأنسب.", "اجعل مدة الفيديو/المحتوى قصيرة.", "اربط كل ريل بمنتج واضح."],
+        "sizes": [{"label": "صورة/فيديو الريل", "size": "1080 × 1920 (9:16)"}],
         "category": "media",
+        "live": "مفضلات المشاهير",
     },
     "before-after-section.schema.json": {
         "desc": "مقارنة قبل وبعد بسحّاب تفاعلي — ظاهرة في المعاينة لمحتوى العناية بالبشرة.",
@@ -687,7 +690,10 @@ HTML = f"""<!DOCTYPE html>
     .price-chip strong {{
       font-family: var(--display); font-size: 1.35rem; color: var(--primary);
     }}
-    .price-chip span {{ color: var(--muted); font-size: .85rem; }}
+    .price-chip .old-price {{
+      color: var(--muted); font-size: .95rem; text-decoration: line-through;
+    }}
+    .price-chip span.note {{ color: var(--muted); font-size: .85rem; }}
 
     .hero-visual {{
       border-radius: calc(var(--radius) + 6px); overflow: hidden;
@@ -950,7 +956,8 @@ HTML = f"""<!DOCTYPE html>
           </div>
           <div class="price-chip">
             <strong>{escape(THEME_PRICE)}</strong>
-            <span>{escape(THEME_PRICE_NOTE)}</span>
+            <span class="old-price">{escape(THEME_PRICE_OLD)}</span>
+            <span class="note">{escape(THEME_PRICE_NOTE)}</span>
           </div>
           <div class="contact-row">
             <a class="contact-pill" href="mailto:{CONTACT_EMAIL}">✉ {CONTACT_EMAIL}</a>
@@ -1097,7 +1104,7 @@ HTML = f"""<!DOCTYPE html>
     <div class="wrap" id="buy">
       <div class="cta">
         <h2>جاهز تنقل متجرك لمستوى ثيم {THEME_NAME_AR}؟</h2>
-        <p><strong>{escape(THEME_PRICE)}</strong> — {escape(THEME_PRICE_NOTE)}</p>
+        <p><strong>{escape(THEME_PRICE)}</strong> <span style="text-decoration:line-through;opacity:.75">{escape(THEME_PRICE_OLD)}</span> — {escape(THEME_PRICE_NOTE)}</p>
         <a class="btn btn-gold" href="{PREVIEW_URL}" target="_blank" rel="noopener">شاهد المعاينة</a>
         <a class="btn btn-ghost" href="{EDITOR_URL}" target="_blank" rel="noopener">محرر التخصيص</a>
         <div class="contact-row">
@@ -1112,7 +1119,7 @@ HTML = f"""<!DOCTYPE html>
   <footer class="site">
     <div class="wrap foot">
       <div>© 2026 ثيم {THEME_NAME_AR} · Smart Code Crew</div>
-      <div><a href="{GITHUB_GUIDE}" target="_blank" rel="noopener">zahar-theme-guide</a></div>
+      <div>Smart Code Crew</div>
     </div>
   </footer>
 
