@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دليل ثيم زهر | مرجع السكاشن والمقاسات للعملاء</title>
+  <meta name="description" content="دليل مرجعي كامل لسكاشن ثيم زهر: شرح كل قسم، المقاسات الموصى بها، وجداول الإعدادات للتجّار على سلة." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1412;
+      --bg-soft: #171e1b;
+      --panel: #1c2622;
+      --line: rgba(232, 220, 198, 0.14);
+      --text: #f4efe6;
+      --muted: #a8b0aa;
+      --accent: #c4a574;
+      --accent-2: #6f9e86;
+      --danger: #d97a6c;
+      --radius: 18px;
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --font: "IBM Plex Sans Arabic", sans-serif;
+      --display: "Noto Kufi Arabic", "IBM Plex Sans Arabic", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background:
+        radial-gradient(1200px 600px at 90% -10%, rgba(196,165,116,.18), transparent 55%),
+        radial-gradient(900px 500px at -10% 20%, rgba(111,158,134,.14), transparent 50%),
+        linear-gradient(180deg, #101613 0%, #0f1412 40%, #121816 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(15,20,18,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: .9rem 0;
+    }
+    .brand {
+      font-family: var(--display); font-weight: 700; font-size: 1.25rem;
+      letter-spacing: -.02em;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .95rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent); color: #1a1510; font-weight: 700;
+      padding: .55rem 1rem; border-radius: 999px; font-size: .9rem;
+    }
+
+    .hero {
+      padding: clamp(3rem, 8vw, 6rem) 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 2.5rem;
+      align-items: end;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    .eyebrow {
+      color: var(--accent); font-weight: 600; font-size: .9rem;
+      margin-bottom: .75rem; display: inline-flex; gap: .5rem; align-items: center;
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.25; margin: 0 0 1rem;
+    }
+    .hero h1 em {
+      font-style: normal; color: var(--accent);
+    }
+    .hero-lead {
+      color: var(--muted); font-size: 1.08rem; max-width: 36rem; margin: 0 0 1.75rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .8rem 1.25rem; border-radius: 999px; font-weight: 700;
+      border: 1px solid transparent; transition: .2s ease;
+    }
+    .btn-primary { background: var(--accent); color: #1a1510; }
+    .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .btn-ghost { border-color: var(--line); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem;
+    }
+    .stat {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.1rem 1rem;
+    }
+    .stat strong {
+      display: block; font-family: var(--display);
+      font-size: 1.7rem; color: var(--accent); line-height: 1.2;
+    }
+    .stat span { color: var(--muted); font-size: .88rem; }
+
+    section.block { padding: 3.5rem 0; }
+    .block h2 {
+      font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin: 0 0 .5rem;
+    }
+    .block .sub { color: var(--muted); margin: 0 0 1.75rem; max-width: 40rem; }
+
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    @media (max-width: 800px) { .why-grid, .stats, .sec-grid { grid-template-columns: 1fr; } }
+    .why {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.35rem;
+    }
+    .why h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+    .why p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    .filters {
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem;
+    }
+    .filter {
+      background: transparent; color: var(--muted); border: 1px solid var(--line);
+      border-radius: 999px; padding: .45rem .9rem; cursor: pointer; font: inherit;
+    }
+    .filter.active, .filter:hover {
+      color: #1a1510; background: var(--accent); border-color: var(--accent);
+    }
+
+    .sec-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    @media (max-width: 1000px) { .sec-grid { grid-template-columns: repeat(2, 1fr); } }
+    .sec-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.2rem; min-height: 180px; transition: .2s ease;
+      display: flex; flex-direction: column; gap: .55rem;
+    }
+    .sec-card:hover {
+      transform: translateY(-3px); border-color: rgba(196,165,116,.45);
+      box-shadow: var(--shadow);
+    }
+    .sec-num {
+      font-family: var(--display); color: var(--accent); font-size: .85rem; letter-spacing: .08em;
+    }
+    .sec-card h3 { margin: 0; font-size: 1.05rem; }
+    .sec-card p { margin: 0; color: var(--muted); font-size: .9rem; flex: 1; }
+    .sec-meta {
+      display: flex; justify-content: space-between; gap: .5rem;
+      color: var(--accent-2); font-size: .8rem; border-top: 1px solid var(--line);
+      padding-top: .7rem; margin-top: .2rem;
+    }
+
+    .sizes-table {
+      width: 100%; border-collapse: collapse; overflow: hidden;
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--panel);
+    }
+    .sizes-table th, .sizes-table td {
+      padding: .85rem 1rem; border-bottom: 1px solid var(--line); text-align: right;
+    }
+    .sizes-table th { color: var(--muted); font-weight: 600; font-size: .85rem; }
+    .sizes-table tr:last-child td { border-bottom: 0; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: rgba(255,255,255,.06); padding: .15rem .4rem; border-radius: 6px;
+      font-size: .88em; direction: ltr; unicode-bidi: plaintext;
+    }
+
+    .detail {
+      margin: 2rem 0 3rem; padding: 1.5rem;
+      background: rgba(28,38,34,.7); border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      scroll-margin-top: 5rem;
+    }
+    .detail-head {
+      display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .cat-pill {
+      display: inline-block; font-size: .78rem; color: var(--accent-2);
+      border: 1px solid rgba(111,158,134,.35); padding: .2rem .6rem; border-radius: 999px;
+      margin-bottom: .5rem;
+    }
+    .detail h2 { margin: 0 0 .4rem; font-family: var(--display); }
+    .lead { color: var(--muted); margin: 0 0 .9rem; max-width: 46rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .badge {
+      background: rgba(196,165,116,.12); border: 1px solid rgba(196,165,116,.3);
+      color: var(--text); border-radius: 999px; padding: .25rem .7rem; font-size: .82rem;
+    }
+    .badge.muted { background: rgba(255,255,255,.04); border-color: var(--line); color: var(--muted); }
+    .file-box {
+      background: var(--bg-soft); border: 1px dashed var(--line); border-radius: 14px;
+      padding: .9rem 1rem; min-width: 220px;
+    }
+    .file-box span { display: block; color: var(--muted); font-size: .8rem; margin-bottom: .25rem; }
+    .panel {
+      background: rgba(0,0,0,.18); border: 1px solid var(--line);
+      border-radius: 14px; padding: 1rem 1.1rem; margin-bottom: 1rem;
+    }
+    .panel h4 { margin: 0 0 .75rem; font-size: 1rem; }
+    .tips { margin: 0; padding-inline-start: 1.2rem; color: var(--muted); }
+    .tips li { margin-bottom: .35rem; }
+    .empty { color: var(--muted); margin: 0; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      text-align: right; padding: .7rem .55rem; border-bottom: 1px solid var(--line);
+      vertical-align: top; font-size: .92rem;
+    }
+    th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+    .type {
+      display: inline-block; background: rgba(111,158,134,.15); color: #b7d5c6;
+      border-radius: 8px; padding: .1rem .45rem; font-size: .8rem;
+    }
+    .back-top {
+      display: inline-block; margin-top: .5rem; color: var(--accent); font-weight: 600;
+    }
+
+    .faq details {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 14px; padding: 1rem 1.1rem; margin-bottom: .65rem;
+    }
+    .faq summary { cursor: pointer; font-weight: 600; }
+    .faq p { color: var(--muted); margin: .7rem 0 0; }
+
+    .cta {
+      margin: 2rem 0 4rem; padding: 2.2rem;
+      border-radius: calc(var(--radius) + 6px);
+      background:
+        linear-gradient(135deg, rgba(196,165,116,.18), rgba(111,158,134,.12)),
+        var(--panel);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .cta h2 { margin: 0 0 .5rem; font-family: var(--display); }
+    .cta p { color: var(--muted); margin: 0 0 1.2rem; }
+
+    footer {
+      border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted);
+      font-size: .9rem;
+    }
+    footer .foot {
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+
+    .search {
+      width: 100%; max-width: 360px; margin-bottom: 1rem;
+      background: var(--panel); border: 1px solid var(--line); color: var(--text);
+      border-radius: 999px; padding: .7rem 1rem; font: inherit;
+    }
+    .search::placeholder { color: var(--muted); }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#">ثيم <span>زهر</span></a>
+      <nav class="nav-links">
+        <a href="#why">ليش الدليل؟</a>
+        <a href="#sizes">جدول المقاسات</a>
+        <a href="#sections">السكاشن</a>
+        <a href="#header">الهيدر والتخطيط</a>
+        <a href="#faq">أسئلة شائعة</a>
+      </nav>
+      <a class="nav-cta" href="https://github.com/smartcodecrew/zahar2" target="_blank" rel="noopener">المستودع على GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">مرجع العملاء · ثيم سلة</div>
+          <h1>دليل ثيم <em>زهر</em><br/>شرح كل سكشن والمقاسات في مكان واحد</h1>
+          <p class="hero-lead">
+            صفحة مرجعية للتجّار وفرق المحتوى: ماذا يفعل كل سكشن، أي مقاس صورة ترفع،
+            وما الإعدادات المتاحة — بنفس روح صفحات توثيق الثيمات الاحترافية.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#sections">تصفّح السكاشن</a>
+            <a class="btn btn-ghost" href="#sizes">جدول المقاسات السريع</a>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>22</strong><span>سكشن موثّق</span></div>
+          <div class="stat"><strong>RTL</strong><span>عربي بالكامل</span></div>
+          <div class="stat"><strong>1</strong><span>مرجع موحّد لكل العملاء</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="why">
+      <div class="wrap">
+        <h2>ليش الدليل؟</h2>
+        <p class="sub">بدل ما كل عميل يسأل عن المقاسات والإعدادات، هذا المرجع يوحّد الإجابة ويسرّع تجهيز المحتوى.</p>
+        <div class="why-grid">
+          <div class="why">
+            <h3>مقاسات واضحة</h3>
+            <p>كل صورة لها مقاس موصى به مستخرج من إعدادات الثيم نفسها، مع نصائح للرفع.</p>
+          </div>
+          <div class="why">
+            <h3>شرح لكل سكشن</h3>
+            <p>متى تستخدم السكشن، ماذا يظهر للعميل، وكيف تخصّصه من محرر سلة.</p>
+          </div>
+          <div class="why">
+            <h3>جداول إعدادات</h3>
+            <p>قائمة الحقول (نص، صورة، لون، قائمة…) مع الملاحظات والقيم الافتراضية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sizes">
+      <div class="wrap">
+        <h2>جدول المقاسات السريع</h2>
+        <p class="sub">أهم المقاسات اللي يحتاجها فريق التصميم قبل رفع الصور على المتجر.</p>
+        <table class="sizes-table">
+          <thead><tr><th>الموضع</th><th>المقاس الموصى به</th></tr></thead>
+          <tbody>
+            <tr><td>شعار الهيدر (ديسكتوب / جوال)</td><td><code>180 × 90</code></td></tr>
+            <tr><td>سلايدر رئيسي — جوال / افتراضي</td><td><code>1400 × 600</code></td></tr>
+            <tr><td>سلايدر رئيسي — سطح المكتب</td><td><code>1920 × 800</code></td></tr>
+            <tr><td>مقارنة قبل وبعد</td><td><code>1200 × 500</code></td></tr>
+            <tr><td>معرض الصور (Gallery)</td><td><code>750 × 750</code></td></tr>
+            <tr><td>بطاقات الفئات</td><td><code>480 × 170</code></td></tr>
+            <tr><td>أيقونات المميزات / الشركاء</td><td><code>200 × 200</code></td></tr>
+            <tr><td>فيديو (MP4)</td><td><code>أقصى 10MB</code></td></tr>
+            <tr><td>ريلز</td><td><code>1080 × 1920 (9:16) مفضّل</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block" id="header">
+      <div class="wrap">
+        <h2>الهيدر وإعدادات التخطيط</h2>
+        <p class="sub">إعدادات عامة تؤثر على كل صفحات المتجر — ابدأ منها قبل بناء الصفحة الرئيسية.</p>
+        <div class="why-grid">
+          <div class="why">
+            <h3>الهيدر</h3>
+            <p>شعار 180 × 90، شعار جوال اختياري بنفس المقاس، شريط تنبيهات، رأس ثابت، وإخفاء اللغة/العملة.</p>
+          </div>
+          <div class="why"><h3>الخطوط العربية</h3><p>اختيار خط المتجر من مجموعة خطوط عربية جاهزة (Changa، Cairo، Tajawal، وغيرها).</p></div><div class="why"><h3>ألوان الهوية</h3><p>الألوان الأساسية تؤخذ من إعدادات العلامة في سلة وتتناسق مع عناصر الثيم.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sections">
+      <div class="wrap">
+        <h2>سكاشن الثيم</h2>
+        <p class="sub">اضغط أي سكشن للانتقال لشرحه الكامل، المقاسات، وجدول الإعدادات.</p>
+        <input class="search" id="search" type="search" placeholder="ابحث باسم السكشن…" />
+        <div class="filters" id="filters">
+          <button type="button" class="filter" data-filter="all">الكل</button><button type="button" class="filter" data-filter="hero">الواجهة الرئيسية</button><button type="button" class="filter" data-filter="promo">العروض والترويج</button><button type="button" class="filter" data-filter="catalog">التصنيفات والمجموعات</button><button type="button" class="filter" data-filter="products">المنتجات</button><button type="button" class="filter" data-filter="media">الوسائط والمعارض</button><button type="button" class="filter" data-filter="social">آراء العملاء</button><button type="button" class="filter" data-filter="content">المحتوى والثقة</button><button type="button" class="filter" data-filter="other">أخرى</button>
+        </div>
+        <div class="sec-grid" id="cards">
+          
+            <a class="sec-card" href="#sec-1-before-after-section" data-cat="media">
+              <span class="sec-num">01</span>
+              <h3>مقارنة قبل وبعد</h3>
+              <p>مقارنة قبل وبعد بسحّاب تفاعلي — مثالي لمستحضرات، تنظيف، تجميل، ترميم.</p>
+              <div class="sec-meta">
+                <span>8 إعداد</span>
+                <span>الوسائط والمعارض</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-2-blog-section" data-cat="content">
+              <span class="sec-num">02</span>
+              <h3>المدونة</h3>
+              <p>عرض مقالات المدونة (سلايدر أو شبكة) مع صورة وملخص ورابط.</p>
+              <div class="sec-meta">
+                <span>17 إعداد</span>
+                <span>المحتوى والثقة</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-3-category-products-section" data-cat="catalog">
+              <span class="sec-num">03</span>
+              <h3>الفئات</h3>
+              <p>بطاقات فئات بصور مخصصة وعناوين وروابط — مثالية لتقسيم الأقسام الرئيسية.</p>
+              <div class="sec-meta">
+                <span>7 إعداد</span>
+                <span>التصنيفات والمجموعات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-4-category-section" data-cat="catalog">
+              <span class="sec-num">04</span>
+              <h3>التصنيفات</h3>
+              <p>سلايدر لعرض تصنيفات المتجر مع ربط مباشر بصفحات التصنيف.</p>
+              <div class="sec-meta">
+                <span>4 إعداد</span>
+                <span>التصنيفات والمجموعات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-5-collection-section" data-cat="catalog">
+              <span class="sec-num">05</span>
+              <h3>مجموعات متنوعه</h3>
+              <p>مجموعات متنوعة بتابات: صورة كمبيوتر/موبايل مع منتج مرتبط.</p>
+              <div class="sec-meta">
+                <span>12 إعداد</span>
+                <span>التصنيفات والمجموعات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-6-diffrent-collction" data-cat="catalog">
+              <span class="sec-num">06</span>
+              <h3>اكتشف مجموعتنا المميزة</h3>
+              <p>سكشن لاكتشاف مجموعة مميزة مع صور وعناوين وروابط وعدادات اختيارية.</p>
+              <div class="sec-meta">
+                <span>12 إعداد</span>
+                <span>التصنيفات والمجموعات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-7-exploere-collections" data-cat="catalog">
+              <span class="sec-num">07</span>
+              <h3>استكشاف المجموعات</h3>
+              <p>استكشاف المجموعات بصورة وعنوان ورابط لكل عنصر.</p>
+              <div class="sec-meta">
+                <span>6 إعداد</span>
+                <span>التصنيفات والمجموعات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-8-faq-section" data-cat="content">
+              <span class="sec-num">08</span>
+              <h3>الأسئلة الشائعة</h3>
+              <p>أسئلة شائعة قابلة للطي لتقليل استفسارات الدعم وزيادة التحويل.</p>
+              <div class="sec-meta">
+                <span>10 إعداد</span>
+                <span>المحتوى والثقة</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-9-features-section" data-cat="content">
+              <span class="sec-num">09</span>
+              <h3>خصائص المتجر</h3>
+              <p>عرض مميزات المتجر أو الخدمات (أيقونات + عناوين) لتعزيز الثقة.</p>
+              <div class="sec-meta">
+                <span>3 إعداد</span>
+                <span>المحتوى والثقة</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-10-ggallery" data-cat="media">
+              <span class="sec-num">10</span>
+              <h3>مجموعة الصور</h3>
+              <p>معرض صور مربّع لعرض منتجات، لحظات، أو ستايل المتجر.</p>
+              <div class="sec-meta">
+                <span>7 إعداد</span>
+                <span>الوسائط والمعارض</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-11-image-tabs-slider" data-cat="media">
+              <span class="sec-num">11</span>
+              <h3>سلايدر تبويبات بالصور</h3>
+              <p>سلايدر صور مع تابات للتنقل بين محتويات مختلفة.</p>
+              <div class="sec-meta">
+                <span>5 إعداد</span>
+                <span>الوسائط والمعارض</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-12-main-slider" data-cat="hero">
+              <span class="sec-num">12</span>
+              <h3>شرائح الصور</h3>
+              <p>السلايدر الرئيسي في أعلى الصفحة الرئيسية. أول انطباع للزائر — استخدم صور عالية الجودة ورسائل واضحة.</p>
+              <div class="sec-meta">
+                <span>10 إعداد</span>
+                <span>الواجهة الرئيسية</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-13-partners" data-cat="content">
+              <span class="sec-num">13</span>
+              <h3>الماركات التجارية</h3>
+              <p>شعارات الشركاء أو العلامات التي يعمل معها المتجر.</p>
+              <div class="sec-meta">
+                <span>7 إعداد</span>
+                <span>المحتوى والثقة</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-14-products-section" data-cat="products">
+              <span class="sec-num">14</span>
+              <h3>قائمة المنتجات</h3>
+              <p>عرض منتجات من تصنيفات أو قوائم محددة مع خيارات تخطيط وألوان.</p>
+              <div class="sec-meta">
+                <span>2 إعداد</span>
+                <span>المنتجات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-15-products-showcase-slider" data-cat="products">
+              <span class="sec-num">15</span>
+              <h3>سلايدر كروت المنتجات</h3>
+              <p>سلايدر إبراز منتجات مختارة بشكل بصري قوي.</p>
+              <div class="sec-meta">
+                <span>5 إعداد</span>
+                <span>المنتجات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-16-products-tabs-section" data-cat="products">
+              <span class="sec-num">16</span>
+              <h3>تبويبات المنتجات</h3>
+              <p>منتجات مقسّمة على تابات (الأكثر مبيعاً، جديد، عروض…).</p>
+              <div class="sec-meta">
+                <span>5 إعداد</span>
+                <span>المنتجات</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-17-promo-samples-banner" data-cat="promo">
+              <span class="sec-num">17</span>
+              <h3>بنر عرض العينات</h3>
+              <p>بنر ترويجي لعينات أو عروض خاصة مع صورة ونصوص وألوان قابلة للتخصيص.</p>
+              <div class="sec-meta">
+                <span>10 إعداد</span>
+                <span>العروض والترويج</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-18-reels-section" data-cat="media">
+              <span class="sec-num">18</span>
+              <h3>الريلز</h3>
+              <p>عرض ريلز / فيديوهات قصيرة بأسلوب عمودي يشبه السوشيال ميديا.</p>
+              <div class="sec-meta">
+                <span>8 إعداد</span>
+                <span>الوسائط والمعارض</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-19-testimonials" data-cat="social">
+              <span class="sec-num">19</span>
+              <h3>أراء العملاء</h3>
+              <p>آراء وتجارب العملاء لبناء الثقة الاجتماعية.</p>
+              <div class="sec-meta">
+                <span>12 إعداد</span>
+                <span>آراء العملاء</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-20-ticker" data-cat="promo">
+              <span class="sec-num">20</span>
+              <h3>شريط الأخبار</h3>
+              <p>شريط متحرك يعرض عروضاً أو رسائل ترويجية بشكل مستمر أعلى أو داخل الصفحة.</p>
+              <div class="sec-meta">
+                <span>5 إعداد</span>
+                <span>العروض والترويج</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-21-video" data-cat="media">
+              <span class="sec-num">21</span>
+              <h3>فيديو</h3>
+              <p>سكشن فيديو لعرض المنتج أو القصة أو حملة إعلانية.</p>
+              <div class="sec-meta">
+                <span>4 إعداد</span>
+                <span>الوسائط والمعارض</span>
+              </div>
+            </a>
+
+            <a class="sec-card" href="#sec-22-why_choose_us" data-cat="content">
+              <span class="sec-num">22</span>
+              <h3>نص وصورة</h3>
+              <p>لماذا تختارنا — نقاط قوة المتجر مع أيقونات ونصوص.</p>
+              <div class="sec-meta">
+                <span>9 إعداد</span>
+                <span>المحتوى والثقة</span>
+              </div>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="details">
+      <div class="wrap">
+        <h2>التفاصيل المرجعية</h2>
+        <p class="sub">مرجع كامل لكل سكشن — انسخ المقاسات لفريق التصميم وشارك الرابط مع العملاء.</p>
+        
+            <article class="detail" id="sec-1-before-after-section" data-cat="media">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">الوسائط والمعارض</span>
+                  <h2>مقارنة قبل وبعد</h2>
+                  <p class="lead">مقارنة قبل وبعد بسحّاب تفاعلي — مثالي لمستحضرات، تنظيف، تجميل، ترميم.</p>
+                  <div class="badges"><span class="badge">صورة قبل: <strong>1200 × 500</strong></span><span class="badge">صورة بعد: <strong>1200 × 500</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>before-after-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة قبل</td><td><code>1200 × 500</code></td></tr><tr><td>صورة بعد</td><td><code>1200 × 500</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>صوّر من نفس الزاوية والإضاءة.</li><li>تأكد أن المقاسين متطابقان.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (8)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>المقارنات</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>صورة قبل</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 1200 * 500</td><td><code>—</code></td></tr><tr><td>صورة بعد</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 1200 * 500</td><td><code>—</code></td></tr><tr><td>عنوان صورة قبل</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>نص صورة قبل</td><td><span class='type'>نص طويل</span></td><td>—</td><td><code>—</code></td></tr><tr><td>عنوان صورة بعد</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>نص صورة بعد</td><td><span class='type'>نص طويل</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون النصوص قبل وبعد</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-2-blog-section" data-cat="content">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المحتوى والثقة</span>
+                  <h2>المدونة</h2>
+                  <p class="lead">عرض مقالات المدونة (سلايدر أو شبكة) مع صورة وملخص ورابط.</p>
+                  <div class="badges"><span class="badge">صورة المقال: <strong>حوالي 600 عرض (نسبة 16:9 أو 4:3)</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>blog-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المقال</td><td><code>حوالي 600 عرض (نسبة 16:9 أو 4:3)</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>صورة المقال موحّدة المقاس تظهر أجمل في الشبكة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (17)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان الرئيسي</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان الفرعي</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>مقالات المدونة</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>صورة المقال</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>عنوان المقال</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>ملخص المقال</td><td><span class='type'>نص طويل</span></td><td>—</td><td><code>—</code></td></tr><tr><td>تاريخ المقال (اختياري)</td><td><span class='type'>نص</span></td><td>مثال: 15 يناير 2024</td><td><code>—</code></td></tr><tr><td>رابط المقال</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr><tr><td>نوع العرض</td><td><span class='type'>قائمة اختيار</span></td><td>—</td><td><code>slider</code></td></tr><tr><td>عدد الأعمدة (للشبكة)</td><td><span class='type'>قائمة اختيار</span></td><td>—</td><td><code>3</code></td></tr><tr><td>عدد المقالات في السلايدر</td><td><span class='type'>رقم</span></td><td>—</td><td><code>3</code></td></tr><tr><td>طول الملخص (عدد الأحرف)</td><td><span class='type'>رقم</span></td><td>—</td><td><code>150</code></td></tr><tr><td>لون عنوان المقال</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون نص المقال</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>نص زر اقرأ المزيد</td><td><span class='type'>نص</span></td><td>—</td><td><code>اقرأ المزيد</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-3-category-products-section" data-cat="catalog">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">التصنيفات والمجموعات</span>
+                  <h2>الفئات</h2>
+                  <p class="lead">بطاقات فئات بصور مخصصة وعناوين وروابط — مثالية لتقسيم الأقسام الرئيسية.</p>
+                  <div class="badges"><span class="badge">صورة الفئة: <strong>480 × 170</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>category-products-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الفئة</td><td><code>480 × 170</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>التزم بالمقاس الموحّد حتى لا تختلف ارتفاعات البطاقات.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (7)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>صور الفئات </td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td> خلفية لكل صورة ف حالة اذا كانت مفرغة بدون باكجراوند </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td> حجم كل صورة (w:480px,h:170px)</td><td><code>—</code></td></tr><tr><td>العنوان</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الشرح</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون النصوص </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-4-category-section" data-cat="catalog">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">التصنيفات والمجموعات</span>
+                  <h2>التصنيفات</h2>
+                  <p class="lead">سلايدر لعرض تصنيفات المتجر مع ربط مباشر بصفحات التصنيف.</p>
+                  <div class="badges"><span class="badge">صورة التصنيف (مستخرجة من التصنيف): <strong>حوالي 400 × 400</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>category-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة التصنيف (مستخرجة من التصنيف)</td><td><code>حوالي 400 × 400</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>اختر تصنيفات لها صور واضحة من لوحة سلة.</li><li>لا تكثر التصنيفات المعروضة دفعة واحدة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (4)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>التصنيف</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>اختر التصنيف</td><td><span class='type'>تصنيف</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون خلفية التصنيف </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون عنوان التصنيف </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-5-collection-section" data-cat="catalog">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">التصنيفات والمجموعات</span>
+                  <h2>مجموعات متنوعه</h2>
+                  <p class="lead">مجموعات متنوعة بتابات: صورة كمبيوتر/موبايل مع منتج مرتبط.</p>
+                  <div class="badges"><span class="badge">صورة الكمبيوتر: <strong>حوالي 600 × عرض مناسب</strong></span><span class="badge">صورة الموبايل: <strong>حوالي 400 عرض</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>collection-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الكمبيوتر</td><td><code>حوالي 600 × عرض مناسب</code></td></tr><tr><td>صورة الموبايل</td><td><code>حوالي 400 عرض</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>جهّز نسختين من الصورة (ديسكتوب وموبايل).</li><li>اختر منتجاً بارزاً لكل مجموعة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (12)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون العنوان الرئيسي والفرعي </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون عناوين التابات</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>المجموعات المتنوعة</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان </td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان </td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>صورة الكمبيوتر</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>صورة الموبايل</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>اختر المنتج</td><td><span class='type'>منتج</span></td><td>—</td><td><code>—</code></td></tr><tr><td> خلفية المنتج </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون نصوص المنتج </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-6-diffrent-collction" data-cat="catalog">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">التصنيفات والمجموعات</span>
+                  <h2>اكتشف مجموعتنا المميزة</h2>
+                  <p class="lead">سكشن لاكتشاف مجموعة مميزة مع صور وعناوين وروابط وعدادات اختيارية.</p>
+                  <div class="badges"><span class="badge">صورة العنصر: <strong>مربّع أو 1:1 مفضّل</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>diffrent-collction.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة العنصر</td><td><code>مربّع أو 1:1 مفضّل</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>مناسب لأبرز المجموعات أو الحملات الموسمية.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (12)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>عنوان السكشن</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>نص الرابط</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>رابط الزر</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان الرئيسي والرابط</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>جعل العنوان والرابط في المنتصف</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>—</code></td></tr><tr><td>قائمة العناصر</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون الخلفية</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرقم</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>رابط الزر</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-7-exploere-collections" data-cat="catalog">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">التصنيفات والمجموعات</span>
+                  <h2>استكشاف المجموعات</h2>
+                  <p class="lead">استكشاف المجموعات بصورة وعنوان ورابط لكل عنصر.</p>
+                  <div class="badges"><span class="badge">صورة المجموعة: <strong>مربّع أو عرضي حسب التصميم</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>exploere-collections.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المجموعة</td><td><code>مربّع أو عرضي حسب التصميم</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>استخدم صوراً متناسقة في النسبة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (6)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>قائمة الصور</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>نص الرابط</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-8-faq-section" data-cat="content">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المحتوى والثقة</span>
+                  <h2>الأسئلة الشائعة</h2>
+                  <p class="lead">أسئلة شائعة قابلة للطي لتقليل استفسارات الدعم وزيادة التحويل.</p>
+                  <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>faq-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>أجب باختصار.</li><li>ضع أكثر الأسئلة تكراراً في الأعلى.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (10)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان الرئيسي</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان الفرعي</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>فتح أول سؤال تلقائياً</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>True</code></td></tr><tr><td>لون نص السؤال</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون نص الإجابة</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الأسئلة الشائعة</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>السؤال</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الإجابة</td><td><span class='type'>نص طويل</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-9-features-section" data-cat="content">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المحتوى والثقة</span>
+                  <h2>خصائص المتجر</h2>
+                  <p class="lead">عرض مميزات المتجر أو الخدمات (أيقونات + عناوين) لتعزيز الثقة.</p>
+                  <div class="badges"><span class="badge">أيقونة الميزة: <strong>200 × 200</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>features-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>أيقونة الميزة</td><td><code>200 × 200</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>استخدم أيقونات بخلفية شفافة PNG.</li><li>يفضّل 3–6 عناصر فقط.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (3)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>الصورة</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم ٢٠٠ *٢٠٠ </td><td><code>—</code></td></tr><tr><td>العنوان</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-10-ggallery" data-cat="media">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">الوسائط والمعارض</span>
+                  <h2>مجموعة الصور</h2>
+                  <p class="lead">معرض صور مربّع لعرض منتجات، لحظات، أو ستايل المتجر.</p>
+                  <div class="badges"><span class="badge">صورة المعرض: <strong>750 × 750</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>ggallery.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المعرض</td><td><code>750 × 750</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>المقاس المربّع يضمن تناسق الشبكة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (7)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>الصورة</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 750 * 750 </td><td><code>—</code></td></tr><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td> نص الزرار  </td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون النصوص </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-11-image-tabs-slider" data-cat="media">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">الوسائط والمعارض</span>
+                  <h2>سلايدر تبويبات بالصور</h2>
+                  <p class="lead">سلايدر صور مع تابات للتنقل بين محتويات مختلفة.</p>
+                  <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>image-tabs-slider.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>وحّد مقاسات الصور داخل نفس السكشن.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العناصر</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr><tr><td>مفعّل افتراضيًا</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>False</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-12-main-slider" data-cat="hero">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">الواجهة الرئيسية</span>
+                  <h2>شرائح الصور</h2>
+                  <p class="lead">السلايدر الرئيسي في أعلى الصفحة الرئيسية. أول انطباع للزائر — استخدم صور عالية الجودة ورسائل واضحة.</p>
+                  <div class="badges"><span class="badge">صورة الجوال / الافتراضية: <strong>1400 × 600</strong></span><span class="badge">صورة سطح المكتب (اختياري): <strong>1920 × 800</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>main-slider.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الجوال / الافتراضية</td><td><code>1400 × 600</code></td></tr><tr><td>صورة سطح المكتب (اختياري)</td><td><code>1920 × 800</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>يفضّل صورتان: واحدة للجوال وأخرى سطح المكتب لجودة أفضل.</li><li>تجنّب النصوص الصغيرة داخل الصورة؛ اكتب العناوين من إعدادات الثيم.</li><li>الصور الثقيلة تبطئ المتجر — احفظ JPEG بجودة 80–85٪.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (10)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>الصورة</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة (الموبايل)</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 1400 * 600</td><td><code>—</code></td></tr><tr><td>الصورة (الكمبيوتر)</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 1920 * 800 للكمبيوتر (اختياري)</td><td><code>—</code></td></tr><tr><td>العنوان</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>النص</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون النص</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td> نص الزرار  </td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون الزرار  </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td> خلفية الزرار  </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-13-partners" data-cat="content">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المحتوى والثقة</span>
+                  <h2>الماركات التجارية</h2>
+                  <p class="lead">شعارات الشركاء أو العلامات التي يعمل معها المتجر.</p>
+                  <div class="badges"><span class="badge">شعار الشريك: <strong>200 × 200</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>partners.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>شعار الشريك</td><td><code>200 × 200</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>وحّد ارتفاع الشعارات قدر الإمكان.</li><li>خلفية شفافة تعطي مظهراً أنظف.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (7)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العناوين </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>عدد الماركات في السلايدر</td><td><span class='type'>رقم</span></td><td>—</td><td><code>6</code></td></tr><tr><td>الماركات التجارية</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم ٢٠٠ *٢٠٠ </td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-14-products-section" data-cat="products">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المنتجات</span>
+                  <h2>قائمة المنتجات</h2>
+                  <p class="lead">عرض منتجات من تصنيفات أو قوائم محددة مع خيارات تخطيط وألوان.</p>
+                  <div class="badges"><span class="badge">صور المنتجات: <strong>حسب إعدادات بطاقة المنتج في المتجر</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>products-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صور المنتجات</td><td><code>حسب إعدادات بطاقة المنتج في المتجر</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>تأكد أن صور المنتجات موحّدة المقاس في لوحة سلة.</li><li>لا تعرض عدداً كبيراً جداً دفعة واحدة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (2)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العنوان</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>اختر قائمة المنتجات </td><td><span class='type'>منتجات</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-15-products-showcase-slider" data-cat="products">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المنتجات</span>
+                  <h2>سلايدر كروت المنتجات</h2>
+                  <p class="lead">سلايدر إبراز منتجات مختارة بشكل بصري قوي.</p>
+                  <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>products-showcase-slider.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>اختر منتجات ذات صور احترافية.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>الكروت</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>صورة الخلفية</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي العلوي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>المنتج</td><td><span class='type'>منتج</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-16-products-tabs-section" data-cat="products">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المنتجات</span>
+                  <h2>تبويبات المنتجات</h2>
+                  <p class="lead">منتجات مقسّمة على تابات (الأكثر مبيعاً، جديد، عروض…).</p>
+                  <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>products-tabs-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>سمِّ التابات بأسماء واضحة للعميل.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>لون نص التبويبات</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>نوع العرض</td><td><span class='type'>قائمة اختيار</span></td><td>—</td><td><code>slider</code></td></tr><tr><td>التبويبات</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>عنوان التبويب</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>المنتجات</td><td><span class='type'>منتجات</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-17-promo-samples-banner" data-cat="promo">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">العروض والترويج</span>
+                  <h2>بنر عرض العينات</h2>
+                  <p class="lead">بنر ترويجي لعينات أو عروض خاصة مع صورة ونصوص وألوان قابلة للتخصيص.</p>
+                  <div class="badges"><span class="badge">صورة البنر: <strong>راجع معاينة السكشن بعد الرفع</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>promo-samples-banner.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة البنر</td><td><code>راجع معاينة السكشن بعد الرفع</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>اجعل الرسالة مختصرة وزر الدعوة واضحاً.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (10)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>النص الجانبي الأيسر</td><td><span class='type'>نص</span></td><td>—</td><td><code>For A Limited Time</code></td></tr><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>Free Makeup Samples</code></td></tr><tr><td>النص الجانبي الأيمن</td><td><span class='type'>نص</span></td><td>—</td><td><code>Free 5 makeup samples with every order over $100</code></td></tr><tr><td>نص الزر</td><td><span class='type'>نص</span></td><td>—</td><td><code>Shop Now</code></td></tr><tr><td>رابط الزر</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون خلفية البنر</td><td><span class='type'>لون</span></td><td>—</td><td><code>#f5d9d8</code></td></tr><tr><td>لون النصوص</td><td><span class='type'>لون</span></td><td>—</td><td><code>#1f252f</code></td></tr><tr><td>لون خلفية الزر</td><td><span class='type'>لون</span></td><td>—</td><td><code>#0f3142</code></td></tr><tr><td>لون الزر عند التمرير</td><td><span class='type'>لون</span></td><td>—</td><td><code>#0b2a39</code></td></tr><tr><td>لون نص الزر</td><td><span class='type'>لون</span></td><td>—</td><td><code>#ffffff</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-18-reels-section" data-cat="media">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">الوسائط والمعارض</span>
+                  <h2>الريلز</h2>
+                  <p class="lead">عرض ريلز / فيديوهات قصيرة بأسلوب عمودي يشبه السوشيال ميديا.</p>
+                  <div class="badges"><span class="badge">فيديو الريل: <strong>يفضّل 1080 × 1920 (9:16)</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>reels-section.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>فيديو الريل</td><td><code>يفضّل 1080 × 1920 (9:16)</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>النسبة العمودية (9:16) هي الأنسب.</li><li>اجعل مدة الفيديو قصيرة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (8)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون النصوص </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>جعل النصوص في المنتصف</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الفيديوهات</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>رابط الفيديو</td><td><span class='type'>نص</span></td><td>تقدر تضيف أي رابط فيديو</td><td><code>—</code></td></tr><tr><td>اختر المنتج</td><td><span class='type'>منتج</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون العنوان والسعر </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-19-testimonials" data-cat="social">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">آراء العملاء</span>
+                  <h2>أراء العملاء</h2>
+                  <p class="lead">آراء وتجارب العملاء لبناء الثقة الاجتماعية.</p>
+                  <div class="badges"><span class="badge">صورة العميل (إن وُجدت): <strong>مربّع صغير ~150 × 150</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>testimonials.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة العميل (إن وُجدت)</td><td><code>مربّع صغير ~150 × 150</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>استخدم أسماء حقيقية إن أمكن.</li><li>آراء قصيرة أوضح من نصوص طويلة.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (12)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td> خلفية السكشن بالكامل </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الرئيسي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون النصوص </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>جعل النصوص في المنتصف</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>—</code></td></tr><tr><td>رأي العميل</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td> خلفية رأي كل عميل </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الإسم</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>النص</td><td><span class='type'>نص طويل</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون نص رأي كل عميل </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>اختر المنتج</td><td><span class='type'>منتج</span></td><td>—</td><td><code>—</code></td></tr><tr><td> لون نصوص المنتج </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-20-ticker" data-cat="promo">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">العروض والترويج</span>
+                  <h2>شريط الأخبار</h2>
+                  <p class="lead">شريط متحرك يعرض عروضاً أو رسائل ترويجية بشكل مستمر أعلى أو داخل الصفحة.</p>
+                  <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>ticker.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>اجعل النص قصيراً وواضحاً.</li><li>استخدم ألواناً متوافقة مع هوية المتجر.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td> شريط الاخبار </td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>خلفية الشريط</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>النص</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون النص</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الايقونة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-21-video" data-cat="media">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">الوسائط والمعارض</span>
+                  <h2>فيديو</h2>
+                  <p class="lead">سكشن فيديو لعرض المنتج أو القصة أو حملة إعلانية.</p>
+                  <div class="badges"><span class="badge">ملف الفيديو: <strong>MP4 — أقصى 10MB</strong></span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>video.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>ملف الفيديو</td><td><code>MP4 — أقصى 10MB</code></td></tr></tbody></table>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>استخدم MP4 مضغوط.</li><li>الحد الأقصى الموصى به: 10MB.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (4)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>العنوان</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الفيديو</td><td><span class='type'>فيديو</span></td><td>mp4 اقصى حجم 10MB</td><td><code>—</code></td></tr><tr><td>تشغيل الفيديو  بشكل مباشر</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>—</code></td></tr><tr><td>عرض ازرار التحكم</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+
+            <article class="detail" id="sec-22-why_choose_us" data-cat="content">
+              <header class="detail-head">
+                <div>
+                  <span class="cat-pill">المحتوى والثقة</span>
+                  <h2>نص وصورة</h2>
+                  <p class="lead">لماذا تختارنا — نقاط قوة المتجر مع أيقونات ونصوص.</p>
+                  <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
+                </div>
+                <div class="file-box">
+                  <span>ملف السكشن</span>
+                  <code>why_choose_us.jinja</code>
+                </div>
+              </header>
+              
+            <div class="panel">
+              <h4>المقاسات الموصى بها</h4>
+              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+            </div>
+              <div class="panel">
+                <h4>نصائح للتجّار</h4>
+                <ul class='tips'><li>ركز على فوائد العميل لا ميزات تقنية.</li></ul>
+              </div>
+              <div class="panel">
+                <h4>جدول الإعدادات المرجعي (9)</h4>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                    <tbody><tr><td>عنوان السكشن</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td> عنوان فرعي </td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون العنوان الرئيسي والنصوص الفرعية </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة الرئيسية</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>قائمة العناصر</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>تفاصيل فرعية</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون  النصوص</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <a class="back-top" href="#sections">↑ العودة لقائمة السكاشن</a>
+            </article>
+      </div>
+    </section>
+
+    <section class="block faq" id="faq">
+      <div class="wrap">
+        <h2>أسئلة شائعة</h2>
+        <p class="sub">إجابات سريعة للتجّار قبل رفع الصور وتفعيل السكاشن.</p>
+        <details open>
+          <summary>هل لازم ألتزم بالمقاس بالبكسل حرفيًا؟</summary>
+          <p>الأفضل الالتزام بالنسبة والمقاس الموصى به. لو الصورة أكبر بنفس النسبة غالبًا تظهر بشكل ممتاز. لو أصغر أو بنسبة مختلفة قد تظهر مقصوصة أو ممدودة.</p>
+        </details>
+        <details>
+          <summary>أي صيغة صور أفضل؟</summary>
+          <p>JPG للصور الفوتوغرافية، PNG للأيقونات والشعارات بخلفية شفافة، وWebP إن كانت متاحة لديك بجودة عالية وحجم أقل.</p>
+        </details>
+        <details>
+          <summary>هل الدليل يتحدث تلقائيًا مع تحديث الثيم؟</summary>
+          <p>نعم — هذا الدليل مبني من ملفات الـ schema في المستودع. عند إضافة سكشن أو تعديل مقاس، نحدّث الصفحة ونرفعها على GitHub Pages.</p>
+        </details>
+        <details>
+          <summary>وين ألاقي الدليل بعد الرفع؟</summary>
+          <p>من رابط GitHub Pages الخاص بالمستودع (يظهر بعد تفعيل Pages من إعدادات المستودع على مجلد docs).</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="cta">
+        <h2>جاهز تجهّز محتوى متجرك؟</h2>
+        <p>شارك هذا الرابط مع المصمم وفريق المحتوى — كل المقاسات والإعدادات في صفحة واحدة.</p>
+        <a class="btn btn-primary" href="#sections">ارجع للسكاشن</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 ثيم زهر · دليل العملاء المرجعي</div>
+      <div><a href="https://github.com/smartcodecrew/zahar2" target="_blank" rel="noopener">smartcodecrew/zahar2</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const filters = document.getElementById('filters');
+    const cards = [...document.querySelectorAll('.sec-card')];
+    const details = [...document.querySelectorAll('.detail')];
+    const search = document.getElementById('search');
+    let active = 'all';
+
+    function apply() {
+      const q = (search.value || '').trim();
+      cards.forEach(card => {
+        const cat = card.dataset.cat;
+        const text = card.innerText;
+        const okCat = active === 'all' || cat === active;
+        const okQ = !q || text.includes(q);
+        card.classList.toggle('hidden', !(okCat && okQ));
+      });
+      details.forEach(d => {
+        const cat = d.dataset.cat;
+        const text = d.innerText;
+        const okCat = active === 'all' || cat === active;
+        const okQ = !q || text.includes(q);
+        d.classList.toggle('hidden', !(okCat && okQ));
+      });
+    }
+
+    filters.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter');
+      if (!btn) return;
+      active = btn.dataset.filter;
+      filters.querySelectorAll('.filter').forEach(b => b.classList.toggle('active', b === btn));
+      apply();
+    });
+    filters.querySelector('[data-filter="all"]').classList.add('active');
+    search.addEventListener('input', apply);
+  </script>
+</body>
+</html>
