@@ -188,15 +188,31 @@
     @media (max-width: 1000px) { .sec-grid { grid-template-columns: repeat(2, 1fr); } }
     .sec-card {
       background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 1.1rem; min-height: 175px; transition: .2s ease;
-      display: flex; flex-direction: column; gap: .45rem;
+      padding: 0; min-height: 220px; transition: .2s ease;
+      display: flex; flex-direction: column; gap: 0; overflow: hidden;
     }
     .sec-card:hover {
       transform: translateY(-3px); border-color: rgba(94,56,85,.35); box-shadow: var(--shadow);
     }
+    .card-thumb {
+      aspect-ratio: 16/9; background: #f0eaef; overflow: hidden; border-bottom: 1px solid var(--line);
+    }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .card-thumb.missing {
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: .85rem;
+    }
+    .sec-card .sec-num, .sec-card h3, .sec-card p, .sec-card .live, .sec-card .sec-meta {
+      margin-inline: 1.05rem;
+    }
+    .sec-card .sec-num { margin-top: .85rem; }
+    .sec-card h3 { margin-top: .25rem; margin-bottom: 0; }
+    .sec-card p { margin: .35rem 1.05rem; }
+    .sec-card .live { margin: 0 1.05rem .35rem; width: fit-content; }
+    .sec-card .sec-meta { margin: auto 1.05rem .9rem; padding-top: .65rem; }
     .sec-num { font-family: var(--display); color: var(--primary); font-size: .82rem; letter-spacing: .06em; }
-    .sec-card h3 { margin: 0; font-size: 1.02rem; color: var(--primary-dark); }
-    .sec-card p { margin: 0; color: var(--muted); font-size: .88rem; flex: 1; }
+    .sec-card h3 { font-size: 1.02rem; color: var(--primary-dark); }
+    .sec-card p { color: var(--muted); font-size: .88rem; flex: 1; }
     .live {
       display: inline-block; font-size: .78rem; color: var(--primary);
       background: rgba(94,56,85,.08); border-radius: 999px; padding: .15rem .55rem;
@@ -204,7 +220,15 @@
     .sec-meta {
       display: flex; justify-content: space-between; gap: .5rem;
       color: var(--primary-soft); font-size: .78rem; border-top: 1px solid var(--line);
-      padding-top: .65rem;
+    }
+    .detail-shot {
+      margin: 0 0 1rem; border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--line); background: #f7f2f5;
+    }
+    .detail-shot img { width: 100%; max-height: 520px; object-fit: contain; object-position: top; background: #fff; }
+    .shot-missing {
+      margin: 0 0 1rem; padding: 1.2rem; border-radius: 14px;
+      border: 1px dashed var(--line); color: var(--muted); text-align: center; background: var(--bg);
     }
 
     .sizes-table, table { width: 100%; border-collapse: collapse; }
@@ -452,6 +476,7 @@
           <p class="lead">شعار المتجر، شريط البحث، الرأس الثابت، وشريط التنبيهات المتحرك.</p>
         </div>
       </header>
+      <figure class="detail-shot"><img src="assets/sections/header.png" alt="الهيدر (أعلى الصفحة)" loading="lazy" /></figure>
       
         <div class="panel">
           <h4>المقاسات</h4>
@@ -487,6 +512,7 @@
           <p class="lead">الخطوط، ألوان الهيدر/الفوتر، تفاصيل المنتج، الأزرار العائمة (واتساب / رجوع لأعلى)، القائمة السفلية، ومنتجات السلة.</p>
         </div>
       </header>
+      
       
         <div class="panel">
           <h4>المقاسات</h4>
@@ -558,6 +584,7 @@
           <p class="lead">لوجو الفوتر، نبذة عن المتجر، شريط الخدمات، روابط مهمة، والموقع الجغرافي — ضمن إعدادات التخطيط.</p>
         </div>
       </header>
+      <figure class="detail-shot"><img src="assets/sections/footer.png" alt="الفوتر (أسفل الصفحة)" loading="lazy" /></figure>
       
         <div class="panel">
           <h4>المقاسات</h4>
@@ -586,6 +613,7 @@
         <div class="filters" id="filters"><button type="button" class="filter" data-filter="all">الكل</button><button type="button" class="filter" data-filter="hero">الواجهة الرئيسية</button><button type="button" class="filter" data-filter="promo">العروض والترويج</button><button type="button" class="filter" data-filter="catalog">التصنيفات والمجموعات</button><button type="button" class="filter" data-filter="products">المنتجات</button><button type="button" class="filter" data-filter="media">الوسائط والمعارض</button><button type="button" class="filter" data-filter="social">آراء العملاء</button><button type="button" class="filter" data-filter="content">المحتوى والثقة</button><button type="button" class="filter" data-filter="other">أخرى</button></div>
         <div class="sec-grid" id="cards">
             <a class="sec-card" href="#sec-1-before-after-section" data-cat="media">
+              <div class="card-thumb"><img src="assets/sections/before-after-section.png" alt="مقارنة قبل وبعد" loading="lazy" /></div>
               <span class="sec-num">01</span>
               <h3>مقارنة قبل وبعد</h3>
               <p>مقارنة قبل وبعد بسحّاب تفاعلي — ظاهرة في المعاينة لمحتوى العناية بالبشرة.</p>
@@ -597,6 +625,7 @@
             </a>
 
             <a class="sec-card" href="#sec-2-blog-section" data-cat="content">
+              <div class="card-thumb"><img src="assets/sections/blog-section.png" alt="المدونة" loading="lazy" /></div>
               <span class="sec-num">02</span>
               <h3>المدونة</h3>
               <p>المدونة — سلايدر أو شبكة مقالات.</p>
@@ -608,6 +637,7 @@
             </a>
 
             <a class="sec-card" href="#sec-3-category-products-section" data-cat="catalog">
+              <div class="card-thumb"><img src="assets/sections/category-products-section.png" alt="الفئات" loading="lazy" /></div>
               <span class="sec-num">03</span>
               <h3>الفئات</h3>
               <p>بطاقات فئات دائرية/أفقية بروابط مخصصة — ظاهرة أسفل السلايدر في المعاينة.</p>
@@ -619,6 +649,7 @@
             </a>
 
             <a class="sec-card" href="#sec-4-category-section" data-cat="catalog">
+              <div class="card-thumb"><img src="assets/sections/category-section.png" alt="التصنيفات" loading="lazy" /></div>
               <span class="sec-num">04</span>
               <h3>التصنيفات</h3>
               <p>سلايدر تصنيفات مربوط بتصنيفات سلة/زد.</p>
@@ -630,6 +661,7 @@
             </a>
 
             <a class="sec-card" href="#sec-5-collection-section" data-cat="catalog">
+              <div class="card-thumb"><img src="assets/sections/collection-section.png" alt="مجموعات متنوعه" loading="lazy" /></div>
               <span class="sec-num">05</span>
               <h3>مجموعات متنوعه</h3>
               <p>مجموعات متنوعة بتابات وصور ديسكتوب/موبايل مع منتج.</p>
@@ -641,6 +673,7 @@
             </a>
 
             <a class="sec-card" href="#sec-6-diffrent-collction" data-cat="catalog">
+              <div class="card-thumb"><img src="assets/sections/diffrent-collction.png" alt="اكتشف مجموعتنا المميزة" loading="lazy" /></div>
               <span class="sec-num">06</span>
               <h3>اكتشف مجموعتنا المميزة</h3>
               <p>اكتشف مجموعتنا المميزة — صور وعناوين وروابط.</p>
@@ -652,6 +685,7 @@
             </a>
 
             <a class="sec-card" href="#sec-7-exploere-collections" data-cat="catalog">
+              <div class="card-thumb"><img src="assets/sections/exploere-collections.png" alt="استكشاف المجموعات" loading="lazy" /></div>
               <span class="sec-num">07</span>
               <h3>استكشاف المجموعات</h3>
               <p>استكشاف المجموعات بصورة وعنوان ورابط (ظاهر في المعاينة بعنوان «استكشف المجموعات»).</p>
@@ -663,6 +697,7 @@
             </a>
 
             <a class="sec-card" href="#sec-8-faq-section" data-cat="content">
+              <div class="card-thumb"><img src="assets/sections/faq-section.png" alt="الأسئلة الشائعة" loading="lazy" /></div>
               <span class="sec-num">08</span>
               <h3>الأسئلة الشائعة</h3>
               <p>أسئلة شائعة قابلة للطي.</p>
@@ -674,6 +709,7 @@
             </a>
 
             <a class="sec-card" href="#sec-9-features-section" data-cat="content">
+              <div class="card-thumb"><img src="assets/sections/features-section.png" alt="خصائص المتجر" loading="lazy" /></div>
               <span class="sec-num">09</span>
               <h3>خصائص المتجر</h3>
               <p>مميزات المتجر بأيقونات وعناوين لبناء الثقة.</p>
@@ -685,6 +721,7 @@
             </a>
 
             <a class="sec-card" href="#sec-10-ggallery" data-cat="media">
+              <div class="card-thumb missing">بدون لقطة</div>
               <span class="sec-num">10</span>
               <h3>مجموعة الصور</h3>
               <p>معرض صور مربّع.</p>
@@ -696,6 +733,7 @@
             </a>
 
             <a class="sec-card" href="#sec-11-image-tabs-slider" data-cat="media">
+              <div class="card-thumb"><img src="assets/sections/image-tabs-slider.png" alt="سلايدر تبويبات بالصور" loading="lazy" /></div>
               <span class="sec-num">11</span>
               <h3>سلايدر تبويبات بالصور</h3>
               <p>سلايدر صور مع تابات.</p>
@@ -707,6 +745,7 @@
             </a>
 
             <a class="sec-card" href="#sec-12-main-slider" data-cat="hero">
+              <div class="card-thumb"><img src="assets/sections/main-slider.png" alt="شرائح الصور" loading="lazy" /></div>
               <span class="sec-num">12</span>
               <h3>شرائح الصور</h3>
               <p>السلايدر الرئيسي أعلى الصفحة. من المعاينة الحية: صور بعرض ~1900×594 تظهر بعرض الشاشة.</p>
@@ -718,6 +757,7 @@
             </a>
 
             <a class="sec-card" href="#sec-13-partners" data-cat="content">
+              <div class="card-thumb"><img src="assets/sections/partners.png" alt="الماركات التجارية" loading="lazy" /></div>
               <span class="sec-num">13</span>
               <h3>الماركات التجارية</h3>
               <p>شعارات الشركاء والعلامات (شركاؤنا المتميزين في المعاينة).</p>
@@ -729,6 +769,7 @@
             </a>
 
             <a class="sec-card" href="#sec-14-products-section" data-cat="products">
+              <div class="card-thumb"><img src="assets/sections/products-section.png" alt="قائمة المنتجات" loading="lazy" /></div>
               <span class="sec-num">14</span>
               <h3>قائمة المنتجات</h3>
               <p>عرض منتجات من تصنيفات — بطاقة المنتج في الثيم بأزرار أضف للسلة والمعاينة السريعة.</p>
@@ -740,6 +781,7 @@
             </a>
 
             <a class="sec-card" href="#sec-15-products-showcase-slider" data-cat="products">
+              <div class="card-thumb"><img src="assets/sections/products-showcase-slider.png" alt="سلايدر كروت المنتجات" loading="lazy" /></div>
               <span class="sec-num">15</span>
               <h3>سلايدر كروت المنتجات</h3>
               <p>سلايدر إبراز منتجات/محتوى بصري (مادة طبيعية في المعاينة).</p>
@@ -751,6 +793,7 @@
             </a>
 
             <a class="sec-card" href="#sec-16-products-tabs-section" data-cat="products">
+              <div class="card-thumb"><img src="assets/sections/products-tabs-section.png" alt="تبويبات المنتجات" loading="lazy" /></div>
               <span class="sec-num">16</span>
               <h3>تبويبات المنتجات</h3>
               <p>منتجات على تابات (أحدث المنتجات، المرطبات…). من المعاينة: شبكة حتى 6 أعمدة على الديسكتوب.</p>
@@ -762,6 +805,7 @@
             </a>
 
             <a class="sec-card" href="#sec-17-promo-samples-banner" data-cat="promo">
+              <div class="card-thumb"><img src="assets/sections/promo-samples-banner.png" alt="بنر عرض العينات" loading="lazy" /></div>
               <span class="sec-num">17</span>
               <h3>بنر عرض العينات</h3>
               <p>بنر ترويجي للعينات/العروض — في المعاينة: «عينات مكياج مجانية».</p>
@@ -773,6 +817,7 @@
             </a>
 
             <a class="sec-card" href="#sec-18-reels-section" data-cat="media">
+              <div class="card-thumb missing">بدون لقطة</div>
               <span class="sec-num">18</span>
               <h3>الريلز</h3>
               <p>ريلز عمودية بأسلوب سوشيال.</p>
@@ -784,6 +829,7 @@
             </a>
 
             <a class="sec-card" href="#sec-19-testimonials" data-cat="social">
+              <div class="card-thumb"><img src="assets/sections/testimonials.png" alt="أراء العملاء" loading="lazy" /></div>
               <span class="sec-num">19</span>
               <h3>أراء العملاء</h3>
               <p>آراء العملاء (يقول العملاء! في المعاينة).</p>
@@ -795,6 +841,7 @@
             </a>
 
             <a class="sec-card" href="#sec-20-ticker" data-cat="promo">
+              <div class="card-thumb missing">بدون لقطة</div>
               <span class="sec-num">20</span>
               <h3>شريط الأخبار</h3>
               <p>شريط متحرك للعروض والرسائل الترويجية.</p>
@@ -806,6 +853,7 @@
             </a>
 
             <a class="sec-card" href="#sec-21-video" data-cat="media">
+              <div class="card-thumb"><img src="assets/sections/video.png" alt="فيديو" loading="lazy" /></div>
               <span class="sec-num">21</span>
               <h3>فيديو</h3>
               <p>سكشن فيديو للمنتج أو الحملة.</p>
@@ -817,6 +865,7 @@
             </a>
 
             <a class="sec-card" href="#sec-22-why_choose_us" data-cat="content">
+              <div class="card-thumb"><img src="assets/sections/why_choose_us.png" alt="نص وصورة" loading="lazy" /></div>
               <span class="sec-num">22</span>
               <h3>نص وصورة</h3>
               <p>لماذا تختارنا؟ — نقاط قوة المتجر.</p>
@@ -848,6 +897,7 @@
                   <code>before-after-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/before-after-section.png" alt="مقارنة قبل وبعد" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -880,6 +930,7 @@
                   <code>blog-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/blog-section.png" alt="المدونة" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -912,6 +963,7 @@
                   <code>category-products-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/category-products-section.png" alt="الفئات" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -944,6 +996,7 @@
                   <code>category-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/category-section.png" alt="التصنيفات" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -976,6 +1029,7 @@
                   <code>collection-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/collection-section.png" alt="مجموعات متنوعه" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1008,6 +1062,7 @@
                   <code>diffrent-collction.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/diffrent-collction.png" alt="اكتشف مجموعتنا المميزة" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1040,6 +1095,7 @@
                   <code>exploere-collections.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/exploere-collections.png" alt="استكشاف المجموعات" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1072,6 +1128,7 @@
                   <code>faq-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/faq-section.png" alt="الأسئلة الشائعة" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1104,6 +1161,7 @@
                   <code>features-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/features-section.png" alt="خصائص المتجر" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1136,6 +1194,7 @@
                   <code>ggallery.jinja</code>
                 </div>
               </header>
+              <div class="shot-missing">لا توجد لقطة من المعاينة لهذا السكشن حالياً</div>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1168,6 +1227,7 @@
                   <code>image-tabs-slider.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/image-tabs-slider.png" alt="سلايدر تبويبات بالصور" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1200,6 +1260,7 @@
                   <code>main-slider.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/main-slider.png" alt="شرائح الصور" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1232,6 +1293,7 @@
                   <code>partners.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/partners.png" alt="الماركات التجارية" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1264,6 +1326,7 @@
                   <code>products-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/products-section.png" alt="قائمة المنتجات" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1296,6 +1359,7 @@
                   <code>products-showcase-slider.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/products-showcase-slider.png" alt="سلايدر كروت المنتجات" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1328,6 +1392,7 @@
                   <code>products-tabs-section.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/products-tabs-section.png" alt="تبويبات المنتجات" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1360,6 +1425,7 @@
                   <code>promo-samples-banner.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/promo-samples-banner.png" alt="بنر عرض العينات" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1392,6 +1458,7 @@
                   <code>reels-section.jinja</code>
                 </div>
               </header>
+              <div class="shot-missing">لا توجد لقطة من المعاينة لهذا السكشن حالياً</div>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1424,6 +1491,7 @@
                   <code>testimonials.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/testimonials.png" alt="أراء العملاء" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1456,6 +1524,7 @@
                   <code>ticker.jinja</code>
                 </div>
               </header>
+              <div class="shot-missing">لا توجد لقطة من المعاينة لهذا السكشن حالياً</div>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1488,6 +1557,7 @@
                   <code>video.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/video.png" alt="فيديو" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
@@ -1520,6 +1590,7 @@
                   <code>why_choose_us.jinja</code>
                 </div>
               </header>
+              <figure class="detail-shot"><img src="assets/sections/why_choose_us.png" alt="نص وصورة" loading="lazy" /></figure>
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>

@@ -350,6 +350,18 @@ def slugify(name: str) -> str:
     return s.strip("-") or "section"
 
 
+def shot_path(key: str) -> str | None:
+    p = DOCS / "assets" / "sections" / f"{key}.png"
+    return f"assets/sections/{key}.png" if p.exists() else None
+
+
+def shot_html(key: str, alt: str, cls: str = "sec-shot") -> str:
+    src = shot_path(key)
+    if not src:
+        return f'<div class="shot-missing">لا توجد لقطة من المعاينة لهذا السكشن حالياً</div>'
+    return f'<figure class="{cls}"><img src="{src}" alt="{escape(alt)}" loading="lazy" /></figure>'
+
+
 def sizes_for(sec):
     enrich = ENRICH.get(sec["file"], {})
     if enrich.get("sizes"):
@@ -385,7 +397,7 @@ def settings_table(settings):
     return rows
 
 
-def build_global_block(title, sid, intro, groups, extra_sizes=None):
+def build_global_block(title, sid, intro, groups, extra_sizes=None, shot_key=None):
     sizes_html = ""
     if extra_sizes:
         rows = "".join(
@@ -397,6 +409,7 @@ def build_global_block(title, sid, intro, groups, extra_sizes=None):
           <h4>المقاسات</h4>
           <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody>{rows}</tbody></table>
         </div>"""
+    shot = shot_html(shot_key, title, "detail-shot") if shot_key else ""
     groups_html = []
     for g in groups:
         rows = settings_table(g["settings"])
@@ -421,6 +434,7 @@ def build_global_block(title, sid, intro, groups, extra_sizes=None):
           <p class="lead">{escape(intro)}</p>
         </div>
       </header>
+      {shot}
       {sizes_html}
       {''.join(groups_html)}
       <a class="back-top" href="#globals">↑ العودة للإعدادات العامة</a>
@@ -432,13 +446,15 @@ def build_sections_html():
     for i, sec in enumerate(DATA, 1):
         enrich = ENRICH.get(sec["file"], {})
         name = (sec.get("name_ar") or sec.get("name_en") or sec["file"]).strip()
-        sid = f"sec-{i}-{slugify(sec['file'].replace('.schema.json', ''))}"
+        key = sec["file"].replace(".schema.json", "")
+        sid = f"sec-{i}-{slugify(key)}"
         cat = enrich.get("category", "other")
         desc = enrich.get("desc", "سكشن قابل للتخصيص من محرر الثيم.")
         tips = enrich.get("tips") or []
         sizes = sizes_for(sec)
         live = enrich.get("live")
         settings = sec.get("settings") or []
+        thumb = shot_path(key)
 
         size_badges = "".join(
             f'<span class="badge">{escape(s["label"])}: <strong>{escape(s["size"])}</strong></span>'
@@ -446,13 +462,19 @@ def build_sections_html():
         ) or '<span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span>'
 
         live_badge = f'<span class="live">في المعاينة: {escape(live)}</span>' if live else ""
+        thumb_html = (
+            f'<div class="card-thumb"><img src="{thumb}" alt="{escape(name)}" loading="lazy" /></div>'
+            if thumb
+            else '<div class="card-thumb missing">بدون لقطة</div>'
+        )
 
         cards.append(
             f"""
             <a class="sec-card" href="#{sid}" data-cat="{cat}">
+              {thumb_html}
               <span class="sec-num">{i:02d}</span>
               <h3>{escape(name)}</h3>
-              <p>{escape(desc[:110])}{'…' if len(desc) > 110 else ''}</p>
+              <p>{escape(desc[:100])}{'…' if len(desc) > 100 else ''}</p>
               {live_badge}
               <div class="sec-meta">
                 <span>{len(settings)} إعداد</span>
@@ -500,6 +522,7 @@ def build_sections_html():
                   <code>{escape(sec.get('jinja') or '')}</code>
                 </div>
               </header>
+              {shot_html(key, name, "detail-shot")}
               {sizes_html}
               <div class="panel"><h4>نصائح للتجّار</h4>{tips_html}</div>
               <div class="panel">
@@ -529,9 +552,9 @@ HEADER_BLOCK = build_global_block(
         {"label": "شعار الجوال", "size": "180 × 90"},
         {"label": "عرض الشعار في المعاينة", "size": "180 × 90 (ملف المصدر ~200×100)"},
     ],
+    shot_key="header",
 )
 
-# Footer is inside layout schema as group "footer"
 footer_groups = [g for g in LAYOUT["groups"] if g.get("id") == "footer"]
 layout_groups = [g for g in LAYOUT["groups"] if g.get("id") != "footer"]
 
@@ -552,6 +575,7 @@ FOOTER_BLOCK = build_global_block(
     "لوجو الفوتر، نبذة عن المتجر، شريط الخدمات، روابط مهمة، والموقع الجغرافي — ضمن إعدادات التخطيط.",
     footer_groups,
     [{"label": "لوجو أسفل الصفحة", "size": "200 × 200"}],
+    shot_key="footer",
 )
 
 FILTERS = "".join(
@@ -749,15 +773,31 @@ HTML = f"""<!DOCTYPE html>
     @media (max-width: 1000px) {{ .sec-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
     .sec-card {{
       background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 1.1rem; min-height: 175px; transition: .2s ease;
-      display: flex; flex-direction: column; gap: .45rem;
+      padding: 0; min-height: 220px; transition: .2s ease;
+      display: flex; flex-direction: column; gap: 0; overflow: hidden;
     }}
     .sec-card:hover {{
       transform: translateY(-3px); border-color: rgba(94,56,85,.35); box-shadow: var(--shadow);
     }}
+    .card-thumb {{
+      aspect-ratio: 16/9; background: #f0eaef; overflow: hidden; border-bottom: 1px solid var(--line);
+    }}
+    .card-thumb img {{ width: 100%; height: 100%; object-fit: cover; object-position: top center; }}
+    .card-thumb.missing {{
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: .85rem;
+    }}
+    .sec-card .sec-num, .sec-card h3, .sec-card p, .sec-card .live, .sec-card .sec-meta {{
+      margin-inline: 1.05rem;
+    }}
+    .sec-card .sec-num {{ margin-top: .85rem; }}
+    .sec-card h3 {{ margin-top: .25rem; margin-bottom: 0; }}
+    .sec-card p {{ margin: .35rem 1.05rem; }}
+    .sec-card .live {{ margin: 0 1.05rem .35rem; width: fit-content; }}
+    .sec-card .sec-meta {{ margin: auto 1.05rem .9rem; padding-top: .65rem; }}
     .sec-num {{ font-family: var(--display); color: var(--primary); font-size: .82rem; letter-spacing: .06em; }}
-    .sec-card h3 {{ margin: 0; font-size: 1.02rem; color: var(--primary-dark); }}
-    .sec-card p {{ margin: 0; color: var(--muted); font-size: .88rem; flex: 1; }}
+    .sec-card h3 {{ font-size: 1.02rem; color: var(--primary-dark); }}
+    .sec-card p {{ color: var(--muted); font-size: .88rem; flex: 1; }}
     .live {{
       display: inline-block; font-size: .78rem; color: var(--primary);
       background: rgba(94,56,85,.08); border-radius: 999px; padding: .15rem .55rem;
@@ -765,7 +805,15 @@ HTML = f"""<!DOCTYPE html>
     .sec-meta {{
       display: flex; justify-content: space-between; gap: .5rem;
       color: var(--primary-soft); font-size: .78rem; border-top: 1px solid var(--line);
-      padding-top: .65rem;
+    }}
+    .detail-shot {{
+      margin: 0 0 1rem; border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--line); background: #f7f2f5;
+    }}
+    .detail-shot img {{ width: 100%; max-height: 520px; object-fit: contain; object-position: top; background: #fff; }}
+    .shot-missing {{
+      margin: 0 0 1rem; padding: 1.2rem; border-radius: 14px;
+      border: 1px dashed var(--line); color: var(--muted); text-align: center; background: var(--bg);
     }}
 
     .sizes-table, table {{ width: 100%; border-collapse: collapse; }}
