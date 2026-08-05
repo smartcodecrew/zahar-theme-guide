@@ -13,6 +13,7 @@ THEME_NAME_EN = "Zahra"
 THEME_PRICE = "460 ر.س"
 THEME_PRICE_OLD = "700 ر.س"
 THEME_PRICE_NOTE = "دفعة واحدة · تخصيص ودعم فني"
+THEME_PRICE_HELP = "إذا واجهت مشكلة في إعدادات الثيم، راسلنا وسنساعدك مجاناً"
 CONTACT_EMAIL = "smartcodecrew@gmail.com"
 CONTACT_PHONE = "01145828786"
 CONTACT_PHONE_TEL = "+201145828786"
@@ -694,6 +695,10 @@ HTML = f"""<!DOCTYPE html>
       color: var(--muted); font-size: .95rem; text-decoration: line-through;
     }}
     .price-chip span.note {{ color: var(--muted); font-size: .85rem; }}
+    .price-chip .help {{
+      color: var(--primary-soft); font-size: .78rem; line-height: 1.55;
+      margin-top: .35rem; max-width: 16rem;
+    }}
 
     .hero-visual {{
       border-radius: calc(var(--radius) + 6px); overflow: hidden;
@@ -958,6 +963,7 @@ HTML = f"""<!DOCTYPE html>
             <strong>{escape(THEME_PRICE)}</strong>
             <span class="old-price">{escape(THEME_PRICE_OLD)}</span>
             <span class="note">{escape(THEME_PRICE_NOTE)}</span>
+            <span class="help">{escape(THEME_PRICE_HELP)}</span>
           </div>
           <div class="contact-row">
             <a class="contact-pill" href="mailto:{CONTACT_EMAIL}">✉ {CONTACT_EMAIL}</a>
@@ -1105,6 +1111,7 @@ HTML = f"""<!DOCTYPE html>
       <div class="cta">
         <h2>جاهز تنقل متجرك لمستوى ثيم {THEME_NAME_AR}؟</h2>
         <p><strong>{escape(THEME_PRICE)}</strong> <span style="text-decoration:line-through;opacity:.75">{escape(THEME_PRICE_OLD)}</span> — {escape(THEME_PRICE_NOTE)}</p>
+        <p style="opacity:.9;font-size:.95rem;margin:.35rem 0 1rem">{escape(THEME_PRICE_HELP)}</p>
         <a class="btn btn-gold" href="{PREVIEW_URL}" target="_blank" rel="noopener">شاهد المعاينة</a>
         <a class="btn btn-ghost" href="{EDITOR_URL}" target="_blank" rel="noopener">محرر التخصيص</a>
         <div class="contact-row">
