@@ -1,23 +1,19 @@
-# دليل ثيم زهر — مرجع العملاء
+﻿# دليل ثيم زهرة — مرجع العملاء
 
-صفحة عربية (RTL) تشرح كل سكشن في الثيم مع المقاسات الموصى بها وجداول الإعدادات.
+صفحة عربية (RTL) بألوان الثيم الحقيقية، شرح السكاشن، المقاسات، إعدادات الهيدر/التخطيط/الفوتر، معاينة حية، وسعر/تواصل.
 
 ## مشاهدة الدليل
 
-الصفحة العامة للعملاء (GitHub Pages):
-
 **https://smartcodecrew.github.io/zahar-theme-guide/**
 
-المستودع العام: https://github.com/smartcodecrew/zahar-theme-guide
+المستودع: https://github.com/smartcodecrew/zahar-theme-guide
 
-أو افتح الملف محلياً: `docs/index.html`
+معاينة الثيم: افتح من الصفحة أو من لوحة زد.
 
 ## تحديث الدليل
-
-عند تعديل ملفات `sections/*.schema.json`:
 
 ```bash
 python docs/build_guide.py
 ```
 
-ثم ارفع التغييرات إلى GitHub.
+ثم ارفع `docs/` للمستودع العام `zahar-theme-guide`.

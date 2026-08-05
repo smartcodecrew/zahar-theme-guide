@@ -3,24 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>دليل ثيم زهر | مرجع السكاشن والمقاسات للعملاء</title>
-  <meta name="description" content="دليل مرجعي كامل لسكاشن ثيم زهر: شرح كل قسم، المقاسات الموصى بها، وجداول الإعدادات للتجّار على سلة." />
+  <title>دليل ثيم زهرة | مرجع السكاشن والمقاسات</title>
+  <meta name="description" content="دليل مرجعي لثيم زهرة على زد: شرح السكاشن، المقاسات، إعدادات الهيدر والفوتر والتخطيط، مع معاينة حية وتواصل مباشر." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0f1412;
-      --bg-soft: #171e1b;
-      --panel: #1c2622;
-      --line: rgba(232, 220, 198, 0.14);
-      --text: #f4efe6;
-      --muted: #a8b0aa;
-      --accent: #c4a574;
-      --accent-2: #6f9e86;
-      --danger: #d97a6c;
+      --primary: #5e3855;
+      --primary-dark: #521B25;
+      --primary-soft: #7a4d70;
+      --on-primary: #ffffff;
+      --bg: #faf7f9;
+      --panel: #ffffff;
+      --text: #2c2c2c;
+      --muted: #6b6570;
+      --line: rgba(94, 56, 85, 0.14);
+      --gold: #c4a574;
       --radius: 18px;
-      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --shadow: 0 18px 40px rgba(94,56,85,.12);
       --font: "IBM Plex Sans Arabic", sans-serif;
       --display: "Noto Kufi Arabic", "IBM Plex Sans Arabic", sans-serif;
     }
@@ -29,11 +30,11 @@
     body {
       margin: 0;
       font-family: var(--font);
-      background:
-        radial-gradient(1200px 600px at 90% -10%, rgba(196,165,116,.18), transparent 55%),
-        radial-gradient(900px 500px at -10% 20%, rgba(111,158,134,.14), transparent 50%),
-        linear-gradient(180deg, #101613 0%, #0f1412 40%, #121816 100%);
       color: var(--text);
+      background:
+        radial-gradient(900px 420px at 100% 0%, rgba(94,56,85,.08), transparent 55%),
+        radial-gradient(700px 360px at 0% 30%, rgba(196,165,116,.10), transparent 50%),
+        var(--bg);
       line-height: 1.7;
     }
     a { color: inherit; text-decoration: none; }
@@ -43,250 +44,283 @@
     .nav {
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(14px);
-      background: rgba(15,20,18,.72);
+      background: rgba(250,247,249,.88);
       border-bottom: 1px solid var(--line);
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; padding: .9rem 0;
+      gap: 1rem; padding: .85rem 0;
     }
     .brand {
-      font-family: var(--display); font-weight: 700; font-size: 1.25rem;
-      letter-spacing: -.02em;
+      font-family: var(--display); font-weight: 700; font-size: 1.2rem;
+      color: var(--primary);
     }
-    .brand span { color: var(--accent); }
-    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .95rem; color: var(--muted); }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links { display: flex; gap: .9rem; flex-wrap: wrap; font-size: .92rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--primary); }
     .nav-cta {
-      background: var(--accent); color: #1a1510; font-weight: 700;
-      padding: .55rem 1rem; border-radius: 999px; font-size: .9rem;
+      background: var(--primary); color: var(--on-primary); font-weight: 700;
+      padding: .55rem 1rem; border-radius: 999px; font-size: .88rem;
     }
 
     .hero {
-      padding: clamp(3rem, 8vw, 6rem) 0 3rem;
-      position: relative;
-      overflow: hidden;
+      padding: clamp(2.5rem, 7vw, 5rem) 0 2.5rem;
     }
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 2.5rem;
-      align-items: end;
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 2rem; align-items: center;
     }
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
     .eyebrow {
-      color: var(--accent); font-weight: 600; font-size: .9rem;
-      margin-bottom: .75rem; display: inline-flex; gap: .5rem; align-items: center;
+      color: var(--primary-soft); font-weight: 600; font-size: .9rem; margin-bottom: .6rem;
     }
     .hero h1 {
       font-family: var(--display);
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      line-height: 1.25; margin: 0 0 1rem;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      line-height: 1.25; margin: 0 0 .9rem; color: var(--primary-dark);
     }
-    .hero h1 em {
-      font-style: normal; color: var(--accent);
-    }
-    .hero-lead {
-      color: var(--muted); font-size: 1.08rem; max-width: 36rem; margin: 0 0 1.75rem;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .hero h1 em { font-style: normal; color: var(--primary); }
+    .hero-lead { color: var(--muted); font-size: 1.05rem; max-width: 36rem; margin: 0 0 1.4rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-bottom: 1.2rem; }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: .8rem 1.25rem; border-radius: 999px; font-weight: 700;
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+      padding: .75rem 1.15rem; border-radius: 999px; font-weight: 700;
       border: 1px solid transparent; transition: .2s ease;
     }
-    .btn-primary { background: var(--accent); color: #1a1510; }
-    .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
-    .btn-ghost { border-color: var(--line); color: var(--text); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary { background: var(--primary); color: var(--on-primary); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-ghost { border-color: var(--line); background: #fff; color: var(--primary); }
+    .btn-ghost:hover { border-color: var(--primary); }
+    .btn-gold { background: var(--gold); color: #2a2116; }
 
-    .stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem;
+    .price-chip {
+      display: inline-flex; flex-direction: column; gap: .15rem;
+      background: #fff; border: 1px solid var(--line); border-radius: 16px;
+      padding: .85rem 1.1rem; box-shadow: var(--shadow);
     }
-    .stat {
-      background: rgba(255,255,255,.03);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.1rem 1rem;
+    .price-chip strong {
+      font-family: var(--display); font-size: 1.35rem; color: var(--primary);
     }
+    .price-chip span { color: var(--muted); font-size: .85rem; }
+
+    .hero-visual {
+      border-radius: calc(var(--radius) + 6px); overflow: hidden;
+      border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff;
+    }
+    .hero-visual img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; }
+
+    .contact-row {
+      display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem;
+    }
+    .contact-pill {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: rgba(94,56,85,.06); border: 1px solid var(--line);
+      color: var(--primary-dark); border-radius: 999px; padding: .45rem .9rem;
+      font-weight: 600; font-size: .9rem;
+    }
+    .contact-pill:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    section.block { padding: 3rem 0; }
+    .block h2 {
+      font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0 0 .45rem; color: var(--primary-dark);
+    }
+    .block .sub { color: var(--muted); margin: 0 0 1.5rem; max-width: 42rem; }
+
+    .preview-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    @media (max-width: 900px) { .preview-grid { grid-template-columns: 1fr; } }
+    .shot {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow);
+    }
+    .shot img { width: 100%; aspect-ratio: 16/11; object-fit: cover; object-position: top; }
+    .shot figcaption {
+      padding: .75rem 1rem; color: var(--muted); font-size: .88rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .swatches {
+      display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem;
+    }
+    .swatch {
+      display: flex; align-items: center; gap: .6rem;
+      background: #fff; border: 1px solid var(--line); border-radius: 14px;
+      padding: .55rem .8rem; min-width: 160px;
+    }
+    .swatch i {
+      width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--line);
+    }
+    .swatch code { font-size: .85rem; direction: ltr; }
+
+    .why-grid, .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem;
+    }
+    @media (max-width: 800px) {
+      .why-grid, .stats, .sec-grid { grid-template-columns: 1fr; }
+    }
+    .why, .stat {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.15rem;
+    }
+    .why h3 { margin: 0 0 .35rem; font-size: 1.02rem; color: var(--primary-dark); }
+    .why p { margin: 0; color: var(--muted); font-size: .94rem; }
     .stat strong {
-      display: block; font-family: var(--display);
-      font-size: 1.7rem; color: var(--accent); line-height: 1.2;
+      display: block; font-family: var(--display); font-size: 1.55rem;
+      color: var(--primary); line-height: 1.2;
     }
     .stat span { color: var(--muted); font-size: .88rem; }
 
-    section.block { padding: 3.5rem 0; }
-    .block h2 {
-      font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem);
-      margin: 0 0 .5rem;
-    }
-    .block .sub { color: var(--muted); margin: 0 0 1.75rem; max-width: 40rem; }
-
-    .why-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-    }
-    @media (max-width: 800px) { .why-grid, .stats, .sec-grid { grid-template-columns: 1fr; } }
-    .why {
-      background: var(--panel); border: 1px solid var(--line);
-      border-radius: var(--radius); padding: 1.35rem;
-    }
-    .why h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
-    .why p { margin: 0; color: var(--muted); font-size: .95rem; }
-
-    .filters {
-      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem;
-    }
+    .filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.1rem; }
     .filter {
-      background: transparent; color: var(--muted); border: 1px solid var(--line);
-      border-radius: 999px; padding: .45rem .9rem; cursor: pointer; font: inherit;
+      background: #fff; color: var(--muted); border: 1px solid var(--line);
+      border-radius: 999px; padding: .4rem .85rem; cursor: pointer; font: inherit;
     }
     .filter.active, .filter:hover {
-      color: #1a1510; background: var(--accent); border-color: var(--accent);
+      color: #fff; background: var(--primary); border-color: var(--primary);
     }
 
     .sec-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem;
     }
     @media (max-width: 1000px) { .sec-grid { grid-template-columns: repeat(2, 1fr); } }
     .sec-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 1.2rem; min-height: 180px; transition: .2s ease;
-      display: flex; flex-direction: column; gap: .55rem;
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.1rem; min-height: 175px; transition: .2s ease;
+      display: flex; flex-direction: column; gap: .45rem;
     }
     .sec-card:hover {
-      transform: translateY(-3px); border-color: rgba(196,165,116,.45);
-      box-shadow: var(--shadow);
+      transform: translateY(-3px); border-color: rgba(94,56,85,.35); box-shadow: var(--shadow);
     }
-    .sec-num {
-      font-family: var(--display); color: var(--accent); font-size: .85rem; letter-spacing: .08em;
+    .sec-num { font-family: var(--display); color: var(--primary); font-size: .82rem; letter-spacing: .06em; }
+    .sec-card h3 { margin: 0; font-size: 1.02rem; color: var(--primary-dark); }
+    .sec-card p { margin: 0; color: var(--muted); font-size: .88rem; flex: 1; }
+    .live {
+      display: inline-block; font-size: .78rem; color: var(--primary);
+      background: rgba(94,56,85,.08); border-radius: 999px; padding: .15rem .55rem;
     }
-    .sec-card h3 { margin: 0; font-size: 1.05rem; }
-    .sec-card p { margin: 0; color: var(--muted); font-size: .9rem; flex: 1; }
     .sec-meta {
       display: flex; justify-content: space-between; gap: .5rem;
-      color: var(--accent-2); font-size: .8rem; border-top: 1px solid var(--line);
-      padding-top: .7rem; margin-top: .2rem;
+      color: var(--primary-soft); font-size: .78rem; border-top: 1px solid var(--line);
+      padding-top: .65rem;
     }
 
+    .sizes-table, table { width: 100%; border-collapse: collapse; }
     .sizes-table {
-      width: 100%; border-collapse: collapse; overflow: hidden;
-      border: 1px solid var(--line); border-radius: var(--radius);
-      background: var(--panel);
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
     }
-    .sizes-table th, .sizes-table td {
-      padding: .85rem 1rem; border-bottom: 1px solid var(--line); text-align: right;
+    .sizes-table th, .sizes-table td, th, td {
+      padding: .75rem .9rem; border-bottom: 1px solid var(--line); text-align: right;
+      font-size: .92rem; vertical-align: top;
     }
-    .sizes-table th { color: var(--muted); font-weight: 600; font-size: .85rem; }
+    .sizes-table th, th { color: var(--muted); font-weight: 600; }
     .sizes-table tr:last-child td { border-bottom: 0; }
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      background: rgba(255,255,255,.06); padding: .15rem .4rem; border-radius: 6px;
-      font-size: .88em; direction: ltr; unicode-bidi: plaintext;
+      background: rgba(94,56,85,.06); padding: .12rem .4rem; border-radius: 6px;
+      font-size: .86em; direction: ltr; unicode-bidi: plaintext; color: var(--primary-dark);
     }
 
     .detail {
-      margin: 2rem 0 3rem; padding: 1.5rem;
-      background: rgba(28,38,34,.7); border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 4px);
-      scroll-margin-top: 5rem;
+      margin: 1.75rem 0 2.5rem; padding: 1.35rem;
+      background: #fff; border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px); scroll-margin-top: 5rem;
+      box-shadow: 0 8px 24px rgba(94,56,85,.05);
     }
     .detail-head {
-      display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      display: flex; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap;
+      margin-bottom: 1rem;
     }
     .cat-pill {
-      display: inline-block; font-size: .78rem; color: var(--accent-2);
-      border: 1px solid rgba(111,158,134,.35); padding: .2rem .6rem; border-radius: 999px;
-      margin-bottom: .5rem;
+      display: inline-block; font-size: .76rem; color: var(--primary);
+      border: 1px solid rgba(94,56,85,.25); padding: .18rem .55rem; border-radius: 999px;
+      margin-bottom: .4rem;
     }
-    .detail h2 { margin: 0 0 .4rem; font-family: var(--display); }
-    .lead { color: var(--muted); margin: 0 0 .9rem; max-width: 46rem; }
-    .badges { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .detail h2 { margin: 0 0 .35rem; font-family: var(--display); color: var(--primary-dark); }
+    .lead { color: var(--muted); margin: .35rem 0 .7rem; max-width: 46rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .5rem; }
     .badge {
-      background: rgba(196,165,116,.12); border: 1px solid rgba(196,165,116,.3);
-      color: var(--text); border-radius: 999px; padding: .25rem .7rem; font-size: .82rem;
+      background: rgba(94,56,85,.07); border: 1px solid rgba(94,56,85,.18);
+      border-radius: 999px; padding: .22rem .65rem; font-size: .8rem;
     }
-    .badge.muted { background: rgba(255,255,255,.04); border-color: var(--line); color: var(--muted); }
+    .badge.muted { color: var(--muted); }
     .file-box {
-      background: var(--bg-soft); border: 1px dashed var(--line); border-radius: 14px;
-      padding: .9rem 1rem; min-width: 220px;
+      background: var(--bg); border: 1px dashed var(--line); border-radius: 14px;
+      padding: .85rem 1rem; min-width: 200px;
     }
-    .file-box span { display: block; color: var(--muted); font-size: .8rem; margin-bottom: .25rem; }
+    .file-box span { display: block; color: var(--muted); font-size: .78rem; margin-bottom: .2rem; }
     .panel {
-      background: rgba(0,0,0,.18); border: 1px solid var(--line);
-      border-radius: 14px; padding: 1rem 1.1rem; margin-bottom: 1rem;
+      background: var(--bg); border: 1px solid var(--line);
+      border-radius: 14px; padding: .95rem 1rem; margin-bottom: .85rem;
     }
-    .panel h4 { margin: 0 0 .75rem; font-size: 1rem; }
-    .tips { margin: 0; padding-inline-start: 1.2rem; color: var(--muted); }
-    .tips li { margin-bottom: .35rem; }
+    .panel h4 { margin: 0 0 .65rem; font-size: .98rem; color: var(--primary-dark); }
+    .tips { margin: 0; padding-inline-start: 1.15rem; color: var(--muted); }
+    .tips li { margin-bottom: .3rem; }
     .empty { color: var(--muted); margin: 0; }
     .table-wrap { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td {
-      text-align: right; padding: .7rem .55rem; border-bottom: 1px solid var(--line);
-      vertical-align: top; font-size: .92rem;
-    }
-    th { color: var(--muted); font-weight: 600; white-space: nowrap; }
     .type {
-      display: inline-block; background: rgba(111,158,134,.15); color: #b7d5c6;
-      border-radius: 8px; padding: .1rem .45rem; font-size: .8rem;
+      display: inline-block; background: rgba(94,56,85,.1); color: var(--primary);
+      border-radius: 8px; padding: .08rem .4rem; font-size: .78rem;
     }
-    .back-top {
-      display: inline-block; margin-top: .5rem; color: var(--accent); font-weight: 600;
-    }
+    .back-top { display: inline-block; margin-top: .35rem; color: var(--primary); font-weight: 600; }
 
     .faq details {
-      background: var(--panel); border: 1px solid var(--line);
-      border-radius: 14px; padding: 1rem 1.1rem; margin-bottom: .65rem;
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 14px; padding: .95rem 1.05rem; margin-bottom: .55rem;
     }
-    .faq summary { cursor: pointer; font-weight: 600; }
-    .faq p { color: var(--muted); margin: .7rem 0 0; }
+    .faq summary { cursor: pointer; font-weight: 600; color: var(--primary-dark); }
+    .faq p { color: var(--muted); margin: .6rem 0 0; }
 
     .cta {
-      margin: 2rem 0 4rem; padding: 2.2rem;
+      margin: 1.5rem 0 3.5rem; padding: 2rem;
       border-radius: calc(var(--radius) + 6px);
-      background:
-        linear-gradient(135deg, rgba(196,165,116,.18), rgba(111,158,134,.12)),
-        var(--panel);
-      border: 1px solid var(--line);
-      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff; text-align: center;
     }
-    .cta h2 { margin: 0 0 .5rem; font-family: var(--display); }
-    .cta p { color: var(--muted); margin: 0 0 1.2rem; }
+    .cta h2 { margin: 0 0 .4rem; font-family: var(--display); color: #fff; }
+    .cta p { margin: 0 0 1rem; opacity: .9; }
+    .cta .btn-gold { margin: .2rem; }
+    .cta .btn-ghost {
+      background: transparent; color: #fff; border-color: rgba(255,255,255,.35);
+    }
+    .cta .contact-row { justify-content: center; }
+    .cta .contact-pill {
+      background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.25); color: #fff;
+    }
+    .cta .contact-pill:hover { background: #fff; color: var(--primary); }
 
-    footer {
-      border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted);
-      font-size: .9rem;
+    footer.site {
+      border-top: 1px solid var(--line); padding: 1.35rem 0 2.2rem; color: var(--muted); font-size: .88rem;
     }
-    footer .foot {
+    footer.site .foot {
       display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
     }
-
     .search {
-      width: 100%; max-width: 360px; margin-bottom: 1rem;
-      background: var(--panel); border: 1px solid var(--line); color: var(--text);
-      border-radius: 999px; padding: .7rem 1rem; font: inherit;
+      width: 100%; max-width: 360px; margin-bottom: .9rem;
+      background: #fff; border: 1px solid var(--line); color: var(--text);
+      border-radius: 999px; padding: .65rem 1rem; font: inherit;
     }
-    .search::placeholder { color: var(--muted); }
     .hidden { display: none !important; }
+    .global-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem;
+    }
+    @media (max-width: 800px) { .global-cards { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#">ثيم <span>زهر</span></a>
+      <a class="brand" href="#">ثيم زهرة</a>
       <nav class="nav-links">
-        <a href="#why">ليش الدليل؟</a>
-        <a href="#sizes">جدول المقاسات</a>
+        <a href="#preview">المعاينة</a>
+        <a href="#sizes">المقاسات</a>
+        <a href="#globals">إعدادات عامة</a>
         <a href="#sections">السكاشن</a>
-        <a href="#header">الهيدر والتخطيط</a>
-        <a href="#faq">أسئلة شائعة</a>
+        <a href="#buy">السعر والتواصل</a>
       </nav>
-      <a class="nav-cta" href="https://github.com/smartcodecrew/zahar-theme-guide" target="_blank" rel="noopener">المستودع على GitHub</a>
+      <a class="nav-cta" href="https://doyftt.dev.zid.store/ar/?theme=8a4af4f7-7c81-4c0c-a672-82b970f4a2cb&md_token=Zt4meo486fHGqn7eu0wHjYkp4ToWWuhutsf3wRMpO7y7J6sAzv98K0mVAT7Udbn5&previewMode=true" target="_blank" rel="noopener">معاينة مباشرة</a>
     </div>
   </header>
 
@@ -294,42 +328,73 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">مرجع العملاء · ثيم سلة</div>
-          <h1>دليل ثيم <em>زهر</em><br/>شرح كل سكشن والمقاسات في مكان واحد</h1>
+          <div class="eyebrow">مرجع العملاء · ثيم زد · Zahra</div>
+          <h1>دليل ثيم <em>زهرة</em><br/>سكاشن، مقاسات، وإعدادات كاملة</h1>
           <p class="hero-lead">
-            صفحة مرجعية للتجّار وفرق المحتوى: ماذا يفعل كل سكشن، أي مقاس صورة ترفع،
-            وما الإعدادات المتاحة — بنفس روح صفحات توثيق الثيمات الاحترافية.
+            مبني من ملفات الثيم + لقطات حقيقية من المعاينة الحية.
+            كل سكشن مشروح مع المقاسات وجداول الإعدادات — للهيدر والفوتر والتخطيط أيضاً.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#sections">تصفّح السكاشن</a>
-            <a class="btn btn-ghost" href="#sizes">جدول المقاسات السريع</a>
+            <a class="btn btn-primary" href="https://doyftt.dev.zid.store/ar/?theme=8a4af4f7-7c81-4c0c-a672-82b970f4a2cb&md_token=Zt4meo486fHGqn7eu0wHjYkp4ToWWuhutsf3wRMpO7y7J6sAzv98K0mVAT7Udbn5&previewMode=true" target="_blank" rel="noopener">فتح المعاينة</a>
+            <a class="btn btn-ghost" href="https://dashboard.zid.sa/ar-sa/stores/641897/theme-editor/8a4af4f7-7c81-4c0c-a672-82b970f4a2cb" target="_blank" rel="noopener">محرر التخصيص</a>
+            <a class="btn btn-gold" href="#buy">السعر والتواصل</a>
+          </div>
+          <div class="price-chip">
+            <strong>تواصل لمعرفة السعر</strong>
+            <span>دفعة واحدة · تخصيص ودعم فني</span>
+          </div>
+          <div class="contact-row">
+            <a class="contact-pill" href="mailto:smartcodecrew@gmail.com">✉ smartcodecrew@gmail.com</a>
+            <a class="contact-pill" href="tel:+201145828786">☎ 01145828786</a>
           </div>
         </div>
-        <div class="stats">
-          <div class="stat"><strong>22</strong><span>سكشن موثّق</span></div>
-          <div class="stat"><strong>RTL</strong><span>عربي بالكامل</span></div>
-          <div class="stat"><strong>1</strong><span>مرجع موحّد لكل العملاء</span></div>
+        <figure class="hero-visual">
+          <img src="assets/preview-hero.png" alt="معاينة ثيم زهرة — السلايدر والفئات" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" id="preview">
+      <div class="wrap">
+        <h2>لقطات من المعاينة الحية</h2>
+        <p class="sub">صور مأخوذة من متجر التجربة على زد — نفس الثيم اللي يشتغل عند العملاء.</p>
+        <div class="preview-grid">
+          <figure class="shot">
+            <img src="assets/preview-hero.png" alt="الهيدر والسلايدر والفئات" />
+            <figcaption>الهيدر + السلايدر الرئيسي + فئات دائرية</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/preview-products.png" alt="تابات المنتجات" />
+            <figcaption>سكشن تابات المنتجات وبطاقة المنتج</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/preview-before-after.png" alt="قبل وبعد والمجموعات" />
+            <figcaption>مقارنة قبل/بعد + بنرات المجموعات</figcaption>
+          </figure>
+        </div>
+        <div class="hero-actions" style="margin-top:1.25rem">
+          <a class="btn btn-primary" href="https://doyftt.dev.zid.store/ar/?theme=8a4af4f7-7c81-4c0c-a672-82b970f4a2cb&md_token=Zt4meo486fHGqn7eu0wHjYkp4ToWWuhutsf3wRMpO7y7J6sAzv98K0mVAT7Udbn5&previewMode=true" target="_blank" rel="noopener">المعاينة الكاملة</a>
+          <a class="btn btn-ghost" href="https://dashboard.zid.sa/ar-sa/stores/641897/theme-editor/8a4af4f7-7c81-4c0c-a672-82b970f4a2cb" target="_blank" rel="noopener">رابط التخصيص (لوحة زد)</a>
         </div>
       </div>
     </section>
 
-    <section class="block" id="why">
+    <section class="block" id="colors">
       <div class="wrap">
-        <h2>ليش الدليل؟</h2>
-        <p class="sub">بدل ما كل عميل يسأل عن المقاسات والإعدادات، هذا المرجع يوحّد الإجابة ويسرّع تجهيز المحتوى.</p>
-        <div class="why-grid">
-          <div class="why">
-            <h3>مقاسات واضحة</h3>
-            <p>كل صورة لها مقاس موصى به مستخرج من إعدادات الثيم نفسها، مع نصائح للرفع.</p>
-          </div>
-          <div class="why">
-            <h3>شرح لكل سكشن</h3>
-            <p>متى تستخدم السكشن، ماذا يظهر للعميل، وكيف تخصّصه من محرر سلة.</p>
-          </div>
-          <div class="why">
-            <h3>جداول إعدادات</h3>
-            <p>قائمة الحقول (نص، صورة، لون، قائمة…) مع الملاحظات والقيم الافتراضية.</p>
-          </div>
+        <h2>ألوان الثيم</h2>
+        <p class="sub">مستخرجة من المعاينة الحية (<code>--primary-color</code> وغيرها).</p>
+        <div class="swatches">
+          <div class="swatch"><i style="background:#5e3855"></i><div>أساسي<br/><code>#5e3855</code></div></div>
+          <div class="swatch"><i style="background:#521B25"></i><div>أساسي غامق<br/><code>#521B25</code></div></div>
+          <div class="swatch"><i style="background:#7a4d70"></i><div>أساسي فاتح<br/><code>#7a4d70</code></div></div>
+          <div class="swatch"><i style="background:#ffffff;border:1px solid #ddd"></i><div>خلفية<br/><code>#ffffff</code></div></div>
+          <div class="swatch"><i style="background:#363636"></i><div>نص<br/><code>#363636</code></div></div>
+          <div class="swatch"><i style="background:#c4a574"></i><div>لمسة ذهبية<br/><code>#c4a574</code></div></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>22</strong><span>سكشن موثّق</span></div>
+          <div class="stat"><strong>3</strong><span>هيدر · تخطيط · فوتر</span></div>
+          <div class="stat"><strong>RTL</strong><span>عربي بالكامل</span></div>
         </div>
       </div>
     </section>
@@ -337,52 +402,194 @@
     <section class="block" id="sizes">
       <div class="wrap">
         <h2>جدول المقاسات السريع</h2>
-        <p class="sub">أهم المقاسات اللي يحتاجها فريق التصميم قبل رفع الصور على المتجر.</p>
+        <p class="sub">مقاسات من إعدادات الثيم + قياسات الصور الفعلية في المعاينة.</p>
         <table class="sizes-table">
-          <thead><tr><th>الموضع</th><th>المقاس الموصى به</th></tr></thead>
+          <thead><tr><th>الموضع</th><th>المقاس الموصى به / الحي</th></tr></thead>
           <tbody>
-            <tr><td>شعار الهيدر (ديسكتوب / جوال)</td><td><code>180 × 90</code></td></tr>
-            <tr><td>سلايدر رئيسي — جوال / افتراضي</td><td><code>1400 × 600</code></td></tr>
-            <tr><td>سلايدر رئيسي — سطح المكتب</td><td><code>1920 × 800</code></td></tr>
-            <tr><td>مقارنة قبل وبعد</td><td><code>1200 × 500</code></td></tr>
-            <tr><td>معرض الصور (Gallery)</td><td><code>750 × 750</code></td></tr>
+            <tr><td>شعار الهيدر</td><td><code>180 × 90</code></td></tr>
+            <tr><td>سلايدر — جوال / افتراضي</td><td><code>1400 × 600</code></td></tr>
+            <tr><td>سلايدر — سطح المكتب</td><td><code>1920 × 800</code> · حي ≈ <code>1900 × 594</code></td></tr>
             <tr><td>بطاقات الفئات</td><td><code>480 × 170</code></td></tr>
+            <tr><td>صور المنتجات</td><td><code>1000 × 1000</code> مفضّل</td></tr>
+            <tr><td>قبل / بعد</td><td><code>1200 × 500</code></td></tr>
+            <tr><td>معرض الصور</td><td><code>750 × 750</code></td></tr>
             <tr><td>أيقونات المميزات / الشركاء</td><td><code>200 × 200</code></td></tr>
-            <tr><td>فيديو (MP4)</td><td><code>أقصى 10MB</code></td></tr>
-            <tr><td>ريلز</td><td><code>1080 × 1920 (9:16) مفضّل</code></td></tr>
+            <tr><td>لوجو الفوتر</td><td><code>200 × 200</code></td></tr>
+            <tr><td>فيديو</td><td><code>MP4 — أقصى 10MB</code></td></tr>
+            <tr><td>ريلز</td><td><code>1080 × 1920 (9:16)</code></td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section class="block" id="header">
+    <section class="block" id="globals">
       <div class="wrap">
-        <h2>الهيدر وإعدادات التخطيط</h2>
-        <p class="sub">إعدادات عامة تؤثر على كل صفحات المتجر — ابدأ منها قبل بناء الصفحة الرئيسية.</p>
-        <div class="why-grid">
-          <div class="why">
+        <h2>الإعدادات العامة</h2>
+        <p class="sub">هيدر · تخطيط (Layout) · فوتر — تؤثر على كل صفحات المتجر.</p>
+        <div class="global-cards">
+          <a class="sec-card" href="#global-header">
+            <span class="sec-num">01</span>
             <h3>الهيدر</h3>
-            <p>شعار 180 × 90، شعار جوال اختياري بنفس المقاس، شريط تنبيهات، رأس ثابت، وإخفاء اللغة/العملة.</p>
-          </div>
-          <div class="why"><h3>الخطوط العربية</h3><p>اختيار خط المتجر من مجموعة خطوط عربية جاهزة (Changa، Cairo، Tajawal، وغيرها).</p></div><div class="why"><h3>ألوان الهوية</h3><p>الألوان الأساسية تؤخذ من إعدادات العلامة في سلة وتتناسق مع عناصر الثيم.</p></div>
+            <p>شعار، بحث، رأس ثابت، شريط تنبيهات بألوان وتحريك.</p>
+          </a>
+          <a class="sec-card" href="#global-layout">
+            <span class="sec-num">02</span>
+            <h3>التخطيط</h3>
+            <p>خطوط، ألوان، واتساب، رجوع لأعلى، قائمة سفلية، سلة.</p>
+          </a>
+          <a class="sec-card" href="#global-footer">
+            <span class="sec-num">03</span>
+            <h3>الفوتر</h3>
+            <p>لوجو، عن المتجر، خدمات، روابط، موقع جغرافي.</p>
+          </a>
         </div>
+        
+    <article class="detail" id="global-header">
+      <header class="detail-head">
+        <div>
+          <span class="cat-pill">إعدادات عامة</span>
+          <h2>الهيدر (أعلى الصفحة)</h2>
+          <p class="lead">شعار المتجر، شريط البحث، الرأس الثابت، وشريط التنبيهات المتحرك.</p>
+        </div>
+      </header>
+      
+        <div class="panel">
+          <h4>المقاسات</h4>
+          <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>شعار الديسكتوب</td><td><code>180 × 90</code></td></tr><tr><td>شعار الجوال</td><td><code>180 × 90</code></td></tr><tr><td>عرض الشعار في المعاينة</td><td><code>180 × 90 (ملف المصدر ~200×100)</code></td></tr></tbody></table>
+        </div>
+      
+            <div class="panel">
+              <h4>رأس الصفحة (5)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>الشعار</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 180 * 90 </td><td><code>—</code></td></tr><tr><td> الشعار للجوال (اختياري)</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 180 * 90 </td><td><code>—</code></td></tr><tr><td>تلميح شريط البحث</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>رأس ثابت مع التمرير</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>True</code></td></tr><tr><td>إخفاء اللغة والعملة</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>False</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel">
+              <h4>شريط التنبيهات (9)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>في حال كان الحقل فارغا لن يتم الانتقال للرابط عند الضغط</td><td><code>—</code></td></tr><tr><td>النص</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>إظهار</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون النص</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>عرض شريط التنبيهات في</td><td><span class='type'>قائمة اختيار</span></td><td>—</td><td><code>all</code></td></tr><tr><td>لون الخلفية</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>تمكين التحريك</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>False</code></td></tr><tr><td>سرعة التحريك</td><td><span class='type'>رقم</span></td><td>—</td><td><code>50</code></td></tr><tr><td>ايقاف التحريك عند النقر</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>False</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+      <a class="back-top" href="#globals">↑ العودة للإعدادات العامة</a>
+    </article>
+        
+    <article class="detail" id="global-layout">
+      <header class="detail-head">
+        <div>
+          <span class="cat-pill">إعدادات عامة</span>
+          <h2>إعدادات التخطيط (Layout)</h2>
+          <p class="lead">الخطوط، ألوان الهيدر/الفوتر، تفاصيل المنتج، الأزرار العائمة (واتساب / رجوع لأعلى)، القائمة السفلية، ومنتجات السلة.</p>
+        </div>
+      </header>
+      
+        <div class="panel">
+          <h4>المقاسات</h4>
+          <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة خلفية عامة (إن وُجدت)</td><td><code>150 × 150</code></td></tr><tr><td>أيقونات الدفع في صفحة المنتج</td><td><code>حسب الأيقونة</code></td></tr></tbody></table>
+        </div>
+      
+            <div class="panel">
+              <h4>الخطوط (1)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>اسم الخط</td><td><span class='type'>قائمة اختيار</span></td><td>—</td><td><code>Changa</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel">
+              <h4>الالوان (5)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>لون النص</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون الخلفية</td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون نص القائممة الجانبية </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>لون خلفية القائمة الجانبية </td><td><span class='type'>لون</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 150 * 150 </td><td><code>—</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel">
+              <h4>تفاصيل المنتج (3)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>النص</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>ايقونة الدفع</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الايقونة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel">
+              <h4>أزرار عائمة (11)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>إظهار زر واتساب</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>False</code></td></tr><tr><td>رقم واتساب (بدون +)</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>إظهار في كل الصفحات</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>True</code></td></tr><tr><td>موضع زر واتساب</td><td><span class='type'>قائمة اختيار</span></td><td>—</td><td><code>right</code></td></tr><tr><td>إظهار زر الرجوع لأعلى</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>True</code></td></tr><tr><td>إظهار في كل الصفحات</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>True</code></td></tr><tr><td>موضع زر الرجوع لأعلى</td><td><span class='type'>قائمة اختيار</span></td><td>—</td><td><code>right</code></td></tr><tr><td>مسافة إظهار الزر (بالبكسل)</td><td><span class='type'>رقم</span></td><td>—</td><td><code>300</code></td></tr><tr><td>لون أيقونة زر الرجوع لأعلى</td><td><span class='type'>لون</span></td><td>—</td><td><code>#ffffff</code></td></tr><tr><td>لون خلفية زر الرجوع لأعلى</td><td><span class='type'>لون</span></td><td>—</td><td><code>#000000</code></td></tr><tr><td>لون إطار التقدم</td><td><span class='type'>لون</span></td><td>—</td><td><code>#25D366</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel">
+              <h4>القائمة السفلية (4)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>إظهار القائمة السفلية</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>True</code></td></tr><tr><td>لون خلفية القائمة</td><td><span class='type'>لون</span></td><td>—</td><td><code>#ffffff</code></td></tr><tr><td>لون النص</td><td><span class='type'>لون</span></td><td>—</td><td><code>#666666</code></td></tr><tr><td>لون العنصر النشط</td><td><span class='type'>لون</span></td><td>—</td><td><code>#000000</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel">
+              <h4>منتجات السلة (3)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>صورة السلة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>عنوان المنتجات بالسلة</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>اختر التصنيف</td><td><span class='type'>منتجات تصنيف</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+      <a class="back-top" href="#globals">↑ العودة للإعدادات العامة</a>
+    </article>
+        
+    <article class="detail" id="global-footer">
+      <header class="detail-head">
+        <div>
+          <span class="cat-pill">إعدادات عامة</span>
+          <h2>الفوتر (أسفل الصفحة)</h2>
+          <p class="lead">لوجو الفوتر، نبذة عن المتجر، شريط الخدمات، روابط مهمة، والموقع الجغرافي — ضمن إعدادات التخطيط.</p>
+        </div>
+      </header>
+      
+        <div class="panel">
+          <h4>المقاسات</h4>
+          <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>لوجو أسفل الصفحة</td><td><code>200 × 200</code></td></tr></tbody></table>
+        </div>
+      
+            <div class="panel">
+              <h4>اسفل الصفحة (9)</h4>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
+                  <tbody><tr><td>لوجو الاسفل الصفحة</td><td><span class='type'>صورة</span></td><td>ارفع صورة بحجم 200 * 200 </td><td><code>—</code></td></tr><tr><td>النص</td><td><span class='type'>نص طويل</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العناصر</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الصورة / الأيقونة</td><td><span class='type'>صورة</span></td><td>—</td><td><code>—</code></td></tr><tr><td>العنوان</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>النص الفرعي</td><td><span class='type'>نص</span></td><td>—</td><td><code>—</code></td></tr><tr><td>إخفاء</td><td><span class='type'>تفعيل/إيقاف</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الروابط</td><td><span class='type'>قائمة عناصر</span></td><td>—</td><td><code>—</code></td></tr><tr><td>الرابط</td><td><span class='type'>رابط</span></td><td>—</td><td><code>—</code></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+      <a class="back-top" href="#globals">↑ العودة للإعدادات العامة</a>
+    </article>
       </div>
     </section>
 
     <section class="block" id="sections">
       <div class="wrap">
         <h2>سكاشن الثيم</h2>
-        <p class="sub">اضغط أي سكشن للانتقال لشرحه الكامل، المقاسات، وجدول الإعدادات.</p>
+        <p class="sub">اضغط أي سكشن للتفاصيل. الوسوم «في المعاينة» مربوطة بمحتوى المتجر التجريبي.</p>
         <input class="search" id="search" type="search" placeholder="ابحث باسم السكشن…" />
-        <div class="filters" id="filters">
-          <button type="button" class="filter" data-filter="all">الكل</button><button type="button" class="filter" data-filter="hero">الواجهة الرئيسية</button><button type="button" class="filter" data-filter="promo">العروض والترويج</button><button type="button" class="filter" data-filter="catalog">التصنيفات والمجموعات</button><button type="button" class="filter" data-filter="products">المنتجات</button><button type="button" class="filter" data-filter="media">الوسائط والمعارض</button><button type="button" class="filter" data-filter="social">آراء العملاء</button><button type="button" class="filter" data-filter="content">المحتوى والثقة</button><button type="button" class="filter" data-filter="other">أخرى</button>
-        </div>
+        <div class="filters" id="filters"><button type="button" class="filter" data-filter="all">الكل</button><button type="button" class="filter" data-filter="hero">الواجهة الرئيسية</button><button type="button" class="filter" data-filter="promo">العروض والترويج</button><button type="button" class="filter" data-filter="catalog">التصنيفات والمجموعات</button><button type="button" class="filter" data-filter="products">المنتجات</button><button type="button" class="filter" data-filter="media">الوسائط والمعارض</button><button type="button" class="filter" data-filter="social">آراء العملاء</button><button type="button" class="filter" data-filter="content">المحتوى والثقة</button><button type="button" class="filter" data-filter="other">أخرى</button></div>
         <div class="sec-grid" id="cards">
-          
             <a class="sec-card" href="#sec-1-before-after-section" data-cat="media">
               <span class="sec-num">01</span>
               <h3>مقارنة قبل وبعد</h3>
-              <p>مقارنة قبل وبعد بسحّاب تفاعلي — مثالي لمستحضرات، تنظيف، تجميل، ترميم.</p>
+              <p>مقارنة قبل وبعد بسحّاب تفاعلي — ظاهرة في المعاينة لمحتوى العناية بالبشرة.</p>
+              <span class="live">في المعاينة: بشرة مرهقة وجافة</span>
               <div class="sec-meta">
                 <span>8 إعداد</span>
                 <span>الوسائط والمعارض</span>
@@ -392,7 +599,8 @@
             <a class="sec-card" href="#sec-2-blog-section" data-cat="content">
               <span class="sec-num">02</span>
               <h3>المدونة</h3>
-              <p>عرض مقالات المدونة (سلايدر أو شبكة) مع صورة وملخص ورابط.</p>
+              <p>المدونة — سلايدر أو شبكة مقالات.</p>
+              <span class="live">في المعاينة: المدونة</span>
               <div class="sec-meta">
                 <span>17 إعداد</span>
                 <span>المحتوى والثقة</span>
@@ -402,7 +610,8 @@
             <a class="sec-card" href="#sec-3-category-products-section" data-cat="catalog">
               <span class="sec-num">03</span>
               <h3>الفئات</h3>
-              <p>بطاقات فئات بصور مخصصة وعناوين وروابط — مثالية لتقسيم الأقسام الرئيسية.</p>
+              <p>بطاقات فئات دائرية/أفقية بروابط مخصصة — ظاهرة أسفل السلايدر في المعاينة.</p>
+              <span class="live">في المعاينة: العطور / المكياج / العناية…</span>
               <div class="sec-meta">
                 <span>7 إعداد</span>
                 <span>التصنيفات والمجموعات</span>
@@ -412,7 +621,8 @@
             <a class="sec-card" href="#sec-4-category-section" data-cat="catalog">
               <span class="sec-num">04</span>
               <h3>التصنيفات</h3>
-              <p>سلايدر لعرض تصنيفات المتجر مع ربط مباشر بصفحات التصنيف.</p>
+              <p>سلايدر تصنيفات مربوط بتصنيفات سلة/زد.</p>
+              
               <div class="sec-meta">
                 <span>4 إعداد</span>
                 <span>التصنيفات والمجموعات</span>
@@ -422,7 +632,8 @@
             <a class="sec-card" href="#sec-5-collection-section" data-cat="catalog">
               <span class="sec-num">05</span>
               <h3>مجموعات متنوعه</h3>
-              <p>مجموعات متنوعة بتابات: صورة كمبيوتر/موبايل مع منتج مرتبط.</p>
+              <p>مجموعات متنوعة بتابات وصور ديسكتوب/موبايل مع منتج.</p>
+              <span class="live">في المعاينة: الصيف / مفضلات المشاهير</span>
               <div class="sec-meta">
                 <span>12 إعداد</span>
                 <span>التصنيفات والمجموعات</span>
@@ -432,7 +643,8 @@
             <a class="sec-card" href="#sec-6-diffrent-collction" data-cat="catalog">
               <span class="sec-num">06</span>
               <h3>اكتشف مجموعتنا المميزة</h3>
-              <p>سكشن لاكتشاف مجموعة مميزة مع صور وعناوين وروابط وعدادات اختيارية.</p>
+              <p>اكتشف مجموعتنا المميزة — صور وعناوين وروابط.</p>
+              
               <div class="sec-meta">
                 <span>12 إعداد</span>
                 <span>التصنيفات والمجموعات</span>
@@ -442,7 +654,8 @@
             <a class="sec-card" href="#sec-7-exploere-collections" data-cat="catalog">
               <span class="sec-num">07</span>
               <h3>استكشاف المجموعات</h3>
-              <p>استكشاف المجموعات بصورة وعنوان ورابط لكل عنصر.</p>
+              <p>استكشاف المجموعات بصورة وعنوان ورابط (ظاهر في المعاينة بعنوان «استكشف المجموعات»).</p>
+              <span class="live">في المعاينة: استكشف المجموعات</span>
               <div class="sec-meta">
                 <span>6 إعداد</span>
                 <span>التصنيفات والمجموعات</span>
@@ -452,7 +665,8 @@
             <a class="sec-card" href="#sec-8-faq-section" data-cat="content">
               <span class="sec-num">08</span>
               <h3>الأسئلة الشائعة</h3>
-              <p>أسئلة شائعة قابلة للطي لتقليل استفسارات الدعم وزيادة التحويل.</p>
+              <p>أسئلة شائعة قابلة للطي.</p>
+              <span class="live">في المعاينة: الأسئلة الشائعه</span>
               <div class="sec-meta">
                 <span>10 إعداد</span>
                 <span>المحتوى والثقة</span>
@@ -462,7 +676,8 @@
             <a class="sec-card" href="#sec-9-features-section" data-cat="content">
               <span class="sec-num">09</span>
               <h3>خصائص المتجر</h3>
-              <p>عرض مميزات المتجر أو الخدمات (أيقونات + عناوين) لتعزيز الثقة.</p>
+              <p>مميزات المتجر بأيقونات وعناوين لبناء الثقة.</p>
+              
               <div class="sec-meta">
                 <span>3 إعداد</span>
                 <span>المحتوى والثقة</span>
@@ -472,7 +687,8 @@
             <a class="sec-card" href="#sec-10-ggallery" data-cat="media">
               <span class="sec-num">10</span>
               <h3>مجموعة الصور</h3>
-              <p>معرض صور مربّع لعرض منتجات، لحظات، أو ستايل المتجر.</p>
+              <p>معرض صور مربّع.</p>
+              
               <div class="sec-meta">
                 <span>7 إعداد</span>
                 <span>الوسائط والمعارض</span>
@@ -482,7 +698,8 @@
             <a class="sec-card" href="#sec-11-image-tabs-slider" data-cat="media">
               <span class="sec-num">11</span>
               <h3>سلايدر تبويبات بالصور</h3>
-              <p>سلايدر صور مع تابات للتنقل بين محتويات مختلفة.</p>
+              <p>سلايدر صور مع تابات.</p>
+              
               <div class="sec-meta">
                 <span>5 إعداد</span>
                 <span>الوسائط والمعارض</span>
@@ -492,7 +709,8 @@
             <a class="sec-card" href="#sec-12-main-slider" data-cat="hero">
               <span class="sec-num">12</span>
               <h3>شرائح الصور</h3>
-              <p>السلايدر الرئيسي في أعلى الصفحة الرئيسية. أول انطباع للزائر — استخدم صور عالية الجودة ورسائل واضحة.</p>
+              <p>السلايدر الرئيسي أعلى الصفحة. من المعاينة الحية: صور بعرض ~1900×594 تظهر بعرض الشاشة.</p>
+              <span class="live">في المعاينة: جمالك يبدأ من هنا</span>
               <div class="sec-meta">
                 <span>10 إعداد</span>
                 <span>الواجهة الرئيسية</span>
@@ -502,7 +720,8 @@
             <a class="sec-card" href="#sec-13-partners" data-cat="content">
               <span class="sec-num">13</span>
               <h3>الماركات التجارية</h3>
-              <p>شعارات الشركاء أو العلامات التي يعمل معها المتجر.</p>
+              <p>شعارات الشركاء والعلامات (شركاؤنا المتميزين في المعاينة).</p>
+              <span class="live">في المعاينة: شركأنا المتميزين</span>
               <div class="sec-meta">
                 <span>7 إعداد</span>
                 <span>المحتوى والثقة</span>
@@ -512,7 +731,8 @@
             <a class="sec-card" href="#sec-14-products-section" data-cat="products">
               <span class="sec-num">14</span>
               <h3>قائمة المنتجات</h3>
-              <p>عرض منتجات من تصنيفات أو قوائم محددة مع خيارات تخطيط وألوان.</p>
+              <p>عرض منتجات من تصنيفات — بطاقة المنتج في الثيم بأزرار أضف للسلة والمعاينة السريعة.</p>
+              <span class="live">في المعاينة: الأكثر مبيعا</span>
               <div class="sec-meta">
                 <span>2 إعداد</span>
                 <span>المنتجات</span>
@@ -522,7 +742,8 @@
             <a class="sec-card" href="#sec-15-products-showcase-slider" data-cat="products">
               <span class="sec-num">15</span>
               <h3>سلايدر كروت المنتجات</h3>
-              <p>سلايدر إبراز منتجات مختارة بشكل بصري قوي.</p>
+              <p>سلايدر إبراز منتجات/محتوى بصري (مادة طبيعية في المعاينة).</p>
+              <span class="live">في المعاينة: مادة طبيعية</span>
               <div class="sec-meta">
                 <span>5 إعداد</span>
                 <span>المنتجات</span>
@@ -532,7 +753,8 @@
             <a class="sec-card" href="#sec-16-products-tabs-section" data-cat="products">
               <span class="sec-num">16</span>
               <h3>تبويبات المنتجات</h3>
-              <p>منتجات مقسّمة على تابات (الأكثر مبيعاً، جديد، عروض…).</p>
+              <p>منتجات على تابات (أحدث المنتجات، المرطبات…). من المعاينة: شبكة حتى 6 أعمدة على الديسكتوب.</p>
+              <span class="live">في المعاينة: أحدث المنتجات</span>
               <div class="sec-meta">
                 <span>5 إعداد</span>
                 <span>المنتجات</span>
@@ -542,7 +764,8 @@
             <a class="sec-card" href="#sec-17-promo-samples-banner" data-cat="promo">
               <span class="sec-num">17</span>
               <h3>بنر عرض العينات</h3>
-              <p>بنر ترويجي لعينات أو عروض خاصة مع صورة ونصوص وألوان قابلة للتخصيص.</p>
+              <p>بنر ترويجي للعينات/العروض — في المعاينة: «عينات مكياج مجانية».</p>
+              <span class="live">في المعاينة: عينات مكياج مجانية</span>
               <div class="sec-meta">
                 <span>10 إعداد</span>
                 <span>العروض والترويج</span>
@@ -552,7 +775,8 @@
             <a class="sec-card" href="#sec-18-reels-section" data-cat="media">
               <span class="sec-num">18</span>
               <h3>الريلز</h3>
-              <p>عرض ريلز / فيديوهات قصيرة بأسلوب عمودي يشبه السوشيال ميديا.</p>
+              <p>ريلز عمودية بأسلوب سوشيال.</p>
+              
               <div class="sec-meta">
                 <span>8 إعداد</span>
                 <span>الوسائط والمعارض</span>
@@ -562,7 +786,8 @@
             <a class="sec-card" href="#sec-19-testimonials" data-cat="social">
               <span class="sec-num">19</span>
               <h3>أراء العملاء</h3>
-              <p>آراء وتجارب العملاء لبناء الثقة الاجتماعية.</p>
+              <p>آراء العملاء (يقول العملاء! في المعاينة).</p>
+              <span class="live">في المعاينة: يقول العملاء!</span>
               <div class="sec-meta">
                 <span>12 إعداد</span>
                 <span>آراء العملاء</span>
@@ -572,7 +797,8 @@
             <a class="sec-card" href="#sec-20-ticker" data-cat="promo">
               <span class="sec-num">20</span>
               <h3>شريط الأخبار</h3>
-              <p>شريط متحرك يعرض عروضاً أو رسائل ترويجية بشكل مستمر أعلى أو داخل الصفحة.</p>
+              <p>شريط متحرك للعروض والرسائل الترويجية.</p>
+              
               <div class="sec-meta">
                 <span>5 إعداد</span>
                 <span>العروض والترويج</span>
@@ -582,7 +808,8 @@
             <a class="sec-card" href="#sec-21-video" data-cat="media">
               <span class="sec-num">21</span>
               <h3>فيديو</h3>
-              <p>سكشن فيديو لعرض المنتج أو القصة أو حملة إعلانية.</p>
+              <p>سكشن فيديو للمنتج أو الحملة.</p>
+              
               <div class="sec-meta">
                 <span>4 إعداد</span>
                 <span>الوسائط والمعارض</span>
@@ -592,27 +819,28 @@
             <a class="sec-card" href="#sec-22-why_choose_us" data-cat="content">
               <span class="sec-num">22</span>
               <h3>نص وصورة</h3>
-              <p>لماذا تختارنا — نقاط قوة المتجر مع أيقونات ونصوص.</p>
+              <p>لماذا تختارنا؟ — نقاط قوة المتجر.</p>
+              <span class="live">في المعاينة: لماذا تختارنا؟</span>
               <div class="sec-meta">
                 <span>9 إعداد</span>
                 <span>المحتوى والثقة</span>
               </div>
-            </a>
-        </div>
+            </a></div>
       </div>
     </section>
 
     <section class="block" id="details">
       <div class="wrap">
-        <h2>التفاصيل المرجعية</h2>
-        <p class="sub">مرجع كامل لكل سكشن — انسخ المقاسات لفريق التصميم وشارك الرابط مع العملاء.</p>
+        <h2>التفاصيل المرجعية للسكاشن</h2>
+        <p class="sub">شرح + مقاسات + جدول إعدادات لكل سكشن.</p>
         
             <article class="detail" id="sec-1-before-after-section" data-cat="media">
               <header class="detail-head">
                 <div>
                   <span class="cat-pill">الوسائط والمعارض</span>
                   <h2>مقارنة قبل وبعد</h2>
-                  <p class="lead">مقارنة قبل وبعد بسحّاب تفاعلي — مثالي لمستحضرات، تنظيف، تجميل، ترميم.</p>
+                  <p class="lead">مقارنة قبل وبعد بسحّاب تفاعلي — ظاهرة في المعاينة لمحتوى العناية بالبشرة.</p>
+                  <span class="live">في المعاينة: بشرة مرهقة وجافة</span>
                   <div class="badges"><span class="badge">صورة قبل: <strong>1200 × 500</strong></span><span class="badge">صورة بعد: <strong>1200 × 500</strong></span></div>
                 </div>
                 <div class="file-box">
@@ -625,12 +853,9 @@
               <h4>المقاسات الموصى بها</h4>
               <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة قبل</td><td><code>1200 × 500</code></td></tr><tr><td>صورة بعد</td><td><code>1200 × 500</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>نفس الزاوية والإضاءة للصورتين.</li><li>المقاسان متطابقان.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>صوّر من نفس الزاوية والإضاءة.</li><li>تأكد أن المقاسين متطابقان.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (8)</h4>
+                <h4>جدول الإعدادات (8)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -646,8 +871,9 @@
                 <div>
                   <span class="cat-pill">المحتوى والثقة</span>
                   <h2>المدونة</h2>
-                  <p class="lead">عرض مقالات المدونة (سلايدر أو شبكة) مع صورة وملخص ورابط.</p>
-                  <div class="badges"><span class="badge">صورة المقال: <strong>حوالي 600 عرض (نسبة 16:9 أو 4:3)</strong></span></div>
+                  <p class="lead">المدونة — سلايدر أو شبكة مقالات.</p>
+                  <span class="live">في المعاينة: المدونة</span>
+                  <div class="badges"><span class="badge">صورة المقال: <strong>~600 عرض (16:9 أو 4:3)</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -657,14 +883,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المقال</td><td><code>حوالي 600 عرض (نسبة 16:9 أو 4:3)</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المقال</td><td><code>~600 عرض (16:9 أو 4:3)</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>صورة مقال موحّدة المقاس.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>صورة المقال موحّدة المقاس تظهر أجمل في الشبكة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (17)</h4>
+                <h4>جدول الإعدادات (17)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -680,7 +903,8 @@
                 <div>
                   <span class="cat-pill">التصنيفات والمجموعات</span>
                   <h2>الفئات</h2>
-                  <p class="lead">بطاقات فئات بصور مخصصة وعناوين وروابط — مثالية لتقسيم الأقسام الرئيسية.</p>
+                  <p class="lead">بطاقات فئات دائرية/أفقية بروابط مخصصة — ظاهرة أسفل السلايدر في المعاينة.</p>
+                  <span class="live">في المعاينة: العطور / المكياج / العناية…</span>
                   <div class="badges"><span class="badge">صورة الفئة: <strong>480 × 170</strong></span></div>
                 </div>
                 <div class="file-box">
@@ -693,12 +917,9 @@
               <h4>المقاسات الموصى بها</h4>
               <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الفئة</td><td><code>480 × 170</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>التزم بالمقاس الموحّد.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>التزم بالمقاس الموحّد حتى لا تختلف ارتفاعات البطاقات.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (7)</h4>
+                <h4>جدول الإعدادات (7)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -714,8 +935,9 @@
                 <div>
                   <span class="cat-pill">التصنيفات والمجموعات</span>
                   <h2>التصنيفات</h2>
-                  <p class="lead">سلايدر لعرض تصنيفات المتجر مع ربط مباشر بصفحات التصنيف.</p>
-                  <div class="badges"><span class="badge">صورة التصنيف (مستخرجة من التصنيف): <strong>حوالي 400 × 400</strong></span></div>
+                  <p class="lead">سلايدر تصنيفات مربوط بتصنيفات سلة/زد.</p>
+                  
+                  <div class="badges"><span class="badge">صورة التصنيف: <strong>حوالي 400 × 400</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -725,14 +947,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة التصنيف (مستخرجة من التصنيف)</td><td><code>حوالي 400 × 400</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة التصنيف</td><td><code>حوالي 400 × 400</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>اختر تصنيفات لها صور واضحة.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>اختر تصنيفات لها صور واضحة من لوحة سلة.</li><li>لا تكثر التصنيفات المعروضة دفعة واحدة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (4)</h4>
+                <h4>جدول الإعدادات (4)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -748,8 +967,9 @@
                 <div>
                   <span class="cat-pill">التصنيفات والمجموعات</span>
                   <h2>مجموعات متنوعه</h2>
-                  <p class="lead">مجموعات متنوعة بتابات: صورة كمبيوتر/موبايل مع منتج مرتبط.</p>
-                  <div class="badges"><span class="badge">صورة الكمبيوتر: <strong>حوالي 600 × عرض مناسب</strong></span><span class="badge">صورة الموبايل: <strong>حوالي 400 عرض</strong></span></div>
+                  <p class="lead">مجموعات متنوعة بتابات وصور ديسكتوب/موبايل مع منتج.</p>
+                  <span class="live">في المعاينة: الصيف / مفضلات المشاهير</span>
+                  <div class="badges"><span class="badge">صورة الكمبيوتر: <strong>~600 عرض</strong></span><span class="badge">صورة الموبايل: <strong>~400 عرض</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -759,14 +979,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الكمبيوتر</td><td><code>حوالي 600 × عرض مناسب</code></td></tr><tr><td>صورة الموبايل</td><td><code>حوالي 400 عرض</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الكمبيوتر</td><td><code>~600 عرض</code></td></tr><tr><td>صورة الموبايل</td><td><code>~400 عرض</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>جهّز نسختين للصورة.</li><li>اختر منتجاً بارزاً.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>جهّز نسختين من الصورة (ديسكتوب وموبايل).</li><li>اختر منتجاً بارزاً لكل مجموعة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (12)</h4>
+                <h4>جدول الإعدادات (12)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -782,8 +999,9 @@
                 <div>
                   <span class="cat-pill">التصنيفات والمجموعات</span>
                   <h2>اكتشف مجموعتنا المميزة</h2>
-                  <p class="lead">سكشن لاكتشاف مجموعة مميزة مع صور وعناوين وروابط وعدادات اختيارية.</p>
-                  <div class="badges"><span class="badge">صورة العنصر: <strong>مربّع أو 1:1 مفضّل</strong></span></div>
+                  <p class="lead">اكتشف مجموعتنا المميزة — صور وعناوين وروابط.</p>
+                  
+                  <div class="badges"><span class="badge">صورة العنصر: <strong>مربّع 1:1 مفضّل</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -793,14 +1011,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة العنصر</td><td><code>مربّع أو 1:1 مفضّل</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة العنصر</td><td><code>مربّع 1:1 مفضّل</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>مناسب للحملات الموسمية.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>مناسب لأبرز المجموعات أو الحملات الموسمية.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (12)</h4>
+                <h4>جدول الإعدادات (12)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -816,8 +1031,9 @@
                 <div>
                   <span class="cat-pill">التصنيفات والمجموعات</span>
                   <h2>استكشاف المجموعات</h2>
-                  <p class="lead">استكشاف المجموعات بصورة وعنوان ورابط لكل عنصر.</p>
-                  <div class="badges"><span class="badge">صورة المجموعة: <strong>مربّع أو عرضي حسب التصميم</strong></span></div>
+                  <p class="lead">استكشاف المجموعات بصورة وعنوان ورابط (ظاهر في المعاينة بعنوان «استكشف المجموعات»).</p>
+                  <span class="live">في المعاينة: استكشف المجموعات</span>
+                  <div class="badges"><span class="badge">صورة المجموعة: <strong>مربّع أو عرضي</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -827,14 +1043,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المجموعة</td><td><code>مربّع أو عرضي حسب التصميم</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المجموعة</td><td><code>مربّع أو عرضي</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>وحّد نسب الصور.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>استخدم صوراً متناسقة في النسبة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (6)</h4>
+                <h4>جدول الإعدادات (6)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -850,7 +1063,8 @@
                 <div>
                   <span class="cat-pill">المحتوى والثقة</span>
                   <h2>الأسئلة الشائعة</h2>
-                  <p class="lead">أسئلة شائعة قابلة للطي لتقليل استفسارات الدعم وزيادة التحويل.</p>
+                  <p class="lead">أسئلة شائعة قابلة للطي.</p>
+                  <span class="live">في المعاينة: الأسئلة الشائعه</span>
                   <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
                 </div>
                 <div class="file-box">
@@ -861,14 +1075,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+              <p class="empty">لا يوجد مقاس صورة ثابت إلزامي لهذا السكشن.</p>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>الأكثر تكراراً أولاً.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>أجب باختصار.</li><li>ضع أكثر الأسئلة تكراراً في الأعلى.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (10)</h4>
+                <h4>جدول الإعدادات (10)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -884,8 +1095,9 @@
                 <div>
                   <span class="cat-pill">المحتوى والثقة</span>
                   <h2>خصائص المتجر</h2>
-                  <p class="lead">عرض مميزات المتجر أو الخدمات (أيقونات + عناوين) لتعزيز الثقة.</p>
-                  <div class="badges"><span class="badge">أيقونة الميزة: <strong>200 × 200</strong></span></div>
+                  <p class="lead">مميزات المتجر بأيقونات وعناوين لبناء الثقة.</p>
+                  
+                  <div class="badges"><span class="badge">أيقونة: <strong>200 × 200</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -895,14 +1107,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>أيقونة الميزة</td><td><code>200 × 200</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>أيقونة</td><td><code>200 × 200</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>أيقونات PNG بخلفية شفافة.</li><li>يفضّل 3–6 عناصر.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>استخدم أيقونات بخلفية شفافة PNG.</li><li>يفضّل 3–6 عناصر فقط.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (3)</h4>
+                <h4>جدول الإعدادات (3)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -918,7 +1127,8 @@
                 <div>
                   <span class="cat-pill">الوسائط والمعارض</span>
                   <h2>مجموعة الصور</h2>
-                  <p class="lead">معرض صور مربّع لعرض منتجات، لحظات، أو ستايل المتجر.</p>
+                  <p class="lead">معرض صور مربّع.</p>
+                  
                   <div class="badges"><span class="badge">صورة المعرض: <strong>750 × 750</strong></span></div>
                 </div>
                 <div class="file-box">
@@ -931,12 +1141,9 @@
               <h4>المقاسات الموصى بها</h4>
               <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المعرض</td><td><code>750 × 750</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>المربّع يضمن تناسق الشبكة.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>المقاس المربّع يضمن تناسق الشبكة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (7)</h4>
+                <h4>جدول الإعدادات (7)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -952,7 +1159,8 @@
                 <div>
                   <span class="cat-pill">الوسائط والمعارض</span>
                   <h2>سلايدر تبويبات بالصور</h2>
-                  <p class="lead">سلايدر صور مع تابات للتنقل بين محتويات مختلفة.</p>
+                  <p class="lead">سلايدر صور مع تابات.</p>
+                  
                   <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
                 </div>
                 <div class="file-box">
@@ -963,14 +1171,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+              <p class="empty">لا يوجد مقاس صورة ثابت إلزامي لهذا السكشن.</p>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>وحّد مقاسات الصور داخل السكشن.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>وحّد مقاسات الصور داخل نفس السكشن.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <h4>جدول الإعدادات (5)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -986,8 +1191,9 @@
                 <div>
                   <span class="cat-pill">الواجهة الرئيسية</span>
                   <h2>شرائح الصور</h2>
-                  <p class="lead">السلايدر الرئيسي في أعلى الصفحة الرئيسية. أول انطباع للزائر — استخدم صور عالية الجودة ورسائل واضحة.</p>
-                  <div class="badges"><span class="badge">صورة الجوال / الافتراضية: <strong>1400 × 600</strong></span><span class="badge">صورة سطح المكتب (اختياري): <strong>1920 × 800</strong></span></div>
+                  <p class="lead">السلايدر الرئيسي أعلى الصفحة. من المعاينة الحية: صور بعرض ~1900×594 تظهر بعرض الشاشة.</p>
+                  <span class="live">في المعاينة: جمالك يبدأ من هنا</span>
+                  <div class="badges"><span class="badge">صورة الجوال / الافتراضية: <strong>1400 × 600</strong></span><span class="badge">صورة سطح المكتب: <strong>1920 × 800</strong></span><span class="badge">مثال حي من المعاينة: <strong>~1900 × 594</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -997,14 +1203,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الجوال / الافتراضية</td><td><code>1400 × 600</code></td></tr><tr><td>صورة سطح المكتب (اختياري)</td><td><code>1920 × 800</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة الجوال / الافتراضية</td><td><code>1400 × 600</code></td></tr><tr><td>صورة سطح المكتب</td><td><code>1920 × 800</code></td></tr><tr><td>مثال حي من المعاينة</td><td><code>~1900 × 594</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>الصور المستخدمة في المعاينة: تقريباً 1900 × 594.</li><li>المقاس الموصى في الإعدادات: 1400×600 للجوال و 1920×800 للكمبيوتر.</li><li>اكتب العنوان والزر من الإعدادات وليس داخل الصورة.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>يفضّل صورتان: واحدة للجوال وأخرى سطح المكتب لجودة أفضل.</li><li>تجنّب النصوص الصغيرة داخل الصورة؛ اكتب العناوين من إعدادات الثيم.</li><li>الصور الثقيلة تبطئ المتجر — احفظ JPEG بجودة 80–85٪.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (10)</h4>
+                <h4>جدول الإعدادات (10)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1020,7 +1223,8 @@
                 <div>
                   <span class="cat-pill">المحتوى والثقة</span>
                   <h2>الماركات التجارية</h2>
-                  <p class="lead">شعارات الشركاء أو العلامات التي يعمل معها المتجر.</p>
+                  <p class="lead">شعارات الشركاء والعلامات (شركاؤنا المتميزين في المعاينة).</p>
+                  <span class="live">في المعاينة: شركأنا المتميزين</span>
                   <div class="badges"><span class="badge">شعار الشريك: <strong>200 × 200</strong></span></div>
                 </div>
                 <div class="file-box">
@@ -1033,12 +1237,9 @@
               <h4>المقاسات الموصى بها</h4>
               <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>شعار الشريك</td><td><code>200 × 200</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>وحّد ارتفاع الشعارات.</li><li>خلفية شفافة أنظف.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>وحّد ارتفاع الشعارات قدر الإمكان.</li><li>خلفية شفافة تعطي مظهراً أنظف.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (7)</h4>
+                <h4>جدول الإعدادات (7)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1054,8 +1255,9 @@
                 <div>
                   <span class="cat-pill">المنتجات</span>
                   <h2>قائمة المنتجات</h2>
-                  <p class="lead">عرض منتجات من تصنيفات أو قوائم محددة مع خيارات تخطيط وألوان.</p>
-                  <div class="badges"><span class="badge">صور المنتجات: <strong>حسب إعدادات بطاقة المنتج في المتجر</strong></span></div>
+                  <p class="lead">عرض منتجات من تصنيفات — بطاقة المنتج في الثيم بأزرار أضف للسلة والمعاينة السريعة.</p>
+                  <span class="live">في المعاينة: الأكثر مبيعا</span>
+                  <div class="badges"><span class="badge">صورة المنتج: <strong>1000 × 1000 مفضّل</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -1065,14 +1267,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صور المنتجات</td><td><code>حسب إعدادات بطاقة المنتج في المتجر</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المنتج</td><td><code>1000 × 1000 مفضّل</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>صور منتجات مربّعة ~1000×1000 تظهر بأفضل شكل.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>تأكد أن صور المنتجات موحّدة المقاس في لوحة سلة.</li><li>لا تعرض عدداً كبيراً جداً دفعة واحدة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (2)</h4>
+                <h4>جدول الإعدادات (2)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1088,7 +1287,8 @@
                 <div>
                   <span class="cat-pill">المنتجات</span>
                   <h2>سلايدر كروت المنتجات</h2>
-                  <p class="lead">سلايدر إبراز منتجات مختارة بشكل بصري قوي.</p>
+                  <p class="lead">سلايدر إبراز منتجات/محتوى بصري (مادة طبيعية في المعاينة).</p>
+                  <span class="live">في المعاينة: مادة طبيعية</span>
                   <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
                 </div>
                 <div class="file-box">
@@ -1099,14 +1299,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+              <p class="empty">لا يوجد مقاس صورة ثابت إلزامي لهذا السكشن.</p>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>صور احترافية عالية الجودة.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>اختر منتجات ذات صور احترافية.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <h4>جدول الإعدادات (5)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1122,8 +1319,9 @@
                 <div>
                   <span class="cat-pill">المنتجات</span>
                   <h2>تبويبات المنتجات</h2>
-                  <p class="lead">منتجات مقسّمة على تابات (الأكثر مبيعاً، جديد، عروض…).</p>
-                  <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
+                  <p class="lead">منتجات على تابات (أحدث المنتجات، المرطبات…). من المعاينة: شبكة حتى 6 أعمدة على الديسكتوب.</p>
+                  <span class="live">في المعاينة: أحدث المنتجات</span>
+                  <div class="badges"><span class="badge">صورة المنتج: <strong>1000 × 1000 مفضّل</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -1133,14 +1331,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة المنتج</td><td><code>1000 × 1000 مفضّل</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>سمِّ التابات بوضوح.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>سمِّ التابات بأسماء واضحة للعميل.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <h4>جدول الإعدادات (5)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1156,8 +1351,9 @@
                 <div>
                   <span class="cat-pill">العروض والترويج</span>
                   <h2>بنر عرض العينات</h2>
-                  <p class="lead">بنر ترويجي لعينات أو عروض خاصة مع صورة ونصوص وألوان قابلة للتخصيص.</p>
-                  <div class="badges"><span class="badge">صورة البنر: <strong>راجع معاينة السكشن بعد الرفع</strong></span></div>
+                  <p class="lead">بنر ترويجي للعينات/العروض — في المعاينة: «عينات مكياج مجانية».</p>
+                  <span class="live">في المعاينة: عينات مكياج مجانية</span>
+                  <div class="badges"><span class="badge">خلفية البنر (إن وُجدت): <strong>حسب العرض الكامل</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -1167,14 +1363,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة البنر</td><td><code>راجع معاينة السكشن بعد الرفع</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>خلفية البنر (إن وُجدت)</td><td><code>حسب العرض الكامل</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>رسالة قصيرة وزر واضح.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>اجعل الرسالة مختصرة وزر الدعوة واضحاً.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (10)</h4>
+                <h4>جدول الإعدادات (10)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1190,8 +1383,9 @@
                 <div>
                   <span class="cat-pill">الوسائط والمعارض</span>
                   <h2>الريلز</h2>
-                  <p class="lead">عرض ريلز / فيديوهات قصيرة بأسلوب عمودي يشبه السوشيال ميديا.</p>
-                  <div class="badges"><span class="badge">فيديو الريل: <strong>يفضّل 1080 × 1920 (9:16)</strong></span></div>
+                  <p class="lead">ريلز عمودية بأسلوب سوشيال.</p>
+                  
+                  <div class="badges"><span class="badge">فيديو الريل: <strong>1080 × 1920 (9:16)</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -1201,14 +1395,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>فيديو الريل</td><td><code>يفضّل 1080 × 1920 (9:16)</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>فيديو الريل</td><td><code>1080 × 1920 (9:16)</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>النسبة 9:16.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>النسبة العمودية (9:16) هي الأنسب.</li><li>اجعل مدة الفيديو قصيرة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (8)</h4>
+                <h4>جدول الإعدادات (8)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1224,8 +1415,9 @@
                 <div>
                   <span class="cat-pill">آراء العملاء</span>
                   <h2>أراء العملاء</h2>
-                  <p class="lead">آراء وتجارب العملاء لبناء الثقة الاجتماعية.</p>
-                  <div class="badges"><span class="badge">صورة العميل (إن وُجدت): <strong>مربّع صغير ~150 × 150</strong></span></div>
+                  <p class="lead">آراء العملاء (يقول العملاء! في المعاينة).</p>
+                  <span class="live">في المعاينة: يقول العملاء!</span>
+                  <div class="badges"><span class="badge">صورة العميل: <strong>~150 × 150</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -1235,14 +1427,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة العميل (إن وُجدت)</td><td><code>مربّع صغير ~150 × 150</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>صورة العميل</td><td><code>~150 × 150</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>آراء قصيرة أوضح.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>استخدم أسماء حقيقية إن أمكن.</li><li>آراء قصيرة أوضح من نصوص طويلة.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (12)</h4>
+                <h4>جدول الإعدادات (12)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1258,7 +1447,8 @@
                 <div>
                   <span class="cat-pill">العروض والترويج</span>
                   <h2>شريط الأخبار</h2>
-                  <p class="lead">شريط متحرك يعرض عروضاً أو رسائل ترويجية بشكل مستمر أعلى أو داخل الصفحة.</p>
+                  <p class="lead">شريط متحرك للعروض والرسائل الترويجية.</p>
+                  
                   <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
                 </div>
                 <div class="file-box">
@@ -1269,14 +1459,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+              <p class="empty">لا يوجد مقاس صورة ثابت إلزامي لهذا السكشن.</p>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>نص قصير وواضح.</li><li>ألوان متوافقة مع هوية المتجر.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>اجعل النص قصيراً وواضحاً.</li><li>استخدم ألواناً متوافقة مع هوية المتجر.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (5)</h4>
+                <h4>جدول الإعدادات (5)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1292,8 +1479,9 @@
                 <div>
                   <span class="cat-pill">الوسائط والمعارض</span>
                   <h2>فيديو</h2>
-                  <p class="lead">سكشن فيديو لعرض المنتج أو القصة أو حملة إعلانية.</p>
-                  <div class="badges"><span class="badge">ملف الفيديو: <strong>MP4 — أقصى 10MB</strong></span></div>
+                  <p class="lead">سكشن فيديو للمنتج أو الحملة.</p>
+                  
+                  <div class="badges"><span class="badge">فيديو: <strong>MP4 — أقصى 10MB</strong></span></div>
                 </div>
                 <div class="file-box">
                   <span>ملف السكشن</span>
@@ -1303,14 +1491,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>ملف الفيديو</td><td><code>MP4 — أقصى 10MB</code></td></tr></tbody></table>
+              <table><thead><tr><th>العنصر</th><th>المقاس</th></tr></thead><tbody><tr><td>فيديو</td><td><code>MP4 — أقصى 10MB</code></td></tr></tbody></table>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>MP4 مضغوط — أقصى 10MB.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>استخدم MP4 مضغوط.</li><li>الحد الأقصى الموصى به: 10MB.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (4)</h4>
+                <h4>جدول الإعدادات (4)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1326,7 +1511,8 @@
                 <div>
                   <span class="cat-pill">المحتوى والثقة</span>
                   <h2>نص وصورة</h2>
-                  <p class="lead">لماذا تختارنا — نقاط قوة المتجر مع أيقونات ونصوص.</p>
+                  <p class="lead">لماذا تختارنا؟ — نقاط قوة المتجر.</p>
+                  <span class="live">في المعاينة: لماذا تختارنا؟</span>
                   <div class="badges"><span class="badge muted">لا يتطلب صوراً بمقاس ثابت</span></div>
                 </div>
                 <div class="file-box">
@@ -1337,14 +1523,11 @@
               
             <div class="panel">
               <h4>المقاسات الموصى بها</h4>
-              <p class="empty">هذا السكشن يعتمد على نصوص/ألوان أو صور منتجات من سلة — لا يوجد مقاس صورة ثابت إلزامي.</p>
+              <p class="empty">لا يوجد مقاس صورة ثابت إلزامي لهذا السكشن.</p>
             </div>
+              <div class="panel"><h4>نصائح للتجّار</h4><ul class='tips'><li>ركّز على فوائد العميل.</li></ul></div>
               <div class="panel">
-                <h4>نصائح للتجّار</h4>
-                <ul class='tips'><li>ركز على فوائد العميل لا ميزات تقنية.</li></ul>
-              </div>
-              <div class="panel">
-                <h4>جدول الإعدادات المرجعي (9)</h4>
+                <h4>جدول الإعدادات (9)</h4>
                 <div class="table-wrap">
                   <table>
                     <thead><tr><th>الإعداد</th><th>النوع</th><th>ملاحظة / مقاس</th><th>افتراضي</th></tr></thead>
@@ -1360,67 +1543,62 @@
     <section class="block faq" id="faq">
       <div class="wrap">
         <h2>أسئلة شائعة</h2>
-        <p class="sub">إجابات سريعة للتجّار قبل رفع الصور وتفعيل السكاشن.</p>
         <details open>
-          <summary>هل لازم ألتزم بالمقاس بالبكسل حرفيًا؟</summary>
-          <p>الأفضل الالتزام بالنسبة والمقاس الموصى به. لو الصورة أكبر بنفس النسبة غالبًا تظهر بشكل ممتاز. لو أصغر أو بنسبة مختلفة قد تظهر مقصوصة أو ممدودة.</p>
+          <summary>هل المقاس لازم يكون بالبكسل حرفياً؟</summary>
+          <p>الأفضل نفس النسبة والمقاس الموصى. صورة أكبر بنفس النسبة غالباً ممتازة.</p>
         </details>
         <details>
-          <summary>أي صيغة صور أفضل؟</summary>
-          <p>JPG للصور الفوتوغرافية، PNG للأيقونات والشعارات بخلفية شفافة، وWebP إن كانت متاحة لديك بجودة عالية وحجم أقل.</p>
+          <summary>من وين أخصّص السكاشن؟</summary>
+          <p>من <a href="https://dashboard.zid.sa/ar-sa/stores/641897/theme-editor/8a4af4f7-7c81-4c0c-a672-82b970f4a2cb" target="_blank" rel="noopener">محرر الثيم في لوحة زد</a>، ومعاينة التغييرات من رابط المعاينة.</p>
         </details>
         <details>
-          <summary>هل الدليل يتحدث تلقائيًا مع تحديث الثيم؟</summary>
-          <p>نعم — هذا الدليل مبني من ملفات الـ schema في المستودع. عند إضافة سكشن أو تعديل مقاس، نحدّث الصفحة ونرفعها على GitHub Pages.</p>
-        </details>
-        <details>
-          <summary>وين ألاقي الدليل بعد الرفع؟</summary>
-          <p>من رابط GitHub Pages الخاص بالمستودع (يظهر بعد تفعيل Pages من إعدادات المستودع على مجلد docs).</p>
+          <summary>كيف أتواصل لشراء أو دعم الثيم؟</summary>
+          <p>الإيميل <a href="mailto:smartcodecrew@gmail.com">smartcodecrew@gmail.com</a> أو الهاتف <a href="tel:+201145828786">01145828786</a>.</p>
         </details>
       </div>
     </section>
 
-    <div class="wrap">
+    <div class="wrap" id="buy">
       <div class="cta">
-        <h2>جاهز تجهّز محتوى متجرك؟</h2>
-        <p>شارك هذا الرابط مع المصمم وفريق المحتوى — كل المقاسات والإعدادات في صفحة واحدة.</p>
-        <a class="btn btn-primary" href="#sections">ارجع للسكاشن</a>
+        <h2>جاهز تنقل متجرك لمستوى ثيم زهرة؟</h2>
+        <p><strong>تواصل لمعرفة السعر</strong> — دفعة واحدة · تخصيص ودعم فني</p>
+        <a class="btn btn-gold" href="https://doyftt.dev.zid.store/ar/?theme=8a4af4f7-7c81-4c0c-a672-82b970f4a2cb&md_token=Zt4meo486fHGqn7eu0wHjYkp4ToWWuhutsf3wRMpO7y7J6sAzv98K0mVAT7Udbn5&previewMode=true" target="_blank" rel="noopener">شاهد المعاينة</a>
+        <a class="btn btn-ghost" href="https://dashboard.zid.sa/ar-sa/stores/641897/theme-editor/8a4af4f7-7c81-4c0c-a672-82b970f4a2cb" target="_blank" rel="noopener">محرر التخصيص</a>
+        <div class="contact-row">
+          <a class="contact-pill" href="mailto:smartcodecrew@gmail.com">✉ smartcodecrew@gmail.com</a>
+          <a class="contact-pill" href="tel:+201145828786">☎ 01145828786</a>
+          <a class="contact-pill" href="https://wa.me/201145828786" target="_blank" rel="noopener">واتساب</a>
+        </div>
       </div>
     </div>
   </main>
 
-  <footer>
+  <footer class="site">
     <div class="wrap foot">
-      <div>© 2026 ثيم زهر · دليل العملاء المرجعي</div>
-      <div><a href="https://github.com/smartcodecrew/zahar-theme-guide" target="_blank" rel="noopener">smartcodecrew/zahar-theme-guide</a></div>
+      <div>© 2026 ثيم زهرة · Smart Code Crew</div>
+      <div><a href="https://github.com/smartcodecrew/zahar-theme-guide" target="_blank" rel="noopener">zahar-theme-guide</a></div>
     </div>
   </footer>
 
   <script>
     const filters = document.getElementById('filters');
-    const cards = [...document.querySelectorAll('.sec-card')];
-    const details = [...document.querySelectorAll('.detail')];
+    const cards = [...document.querySelectorAll('#cards .sec-card')];
+    const details = [...document.querySelectorAll('#details .detail')];
     const search = document.getElementById('search');
     let active = 'all';
-
     function apply() {
       const q = (search.value || '').trim();
       cards.forEach(card => {
-        const cat = card.dataset.cat;
-        const text = card.innerText;
-        const okCat = active === 'all' || cat === active;
-        const okQ = !q || text.includes(q);
+        const okCat = active === 'all' || card.dataset.cat === active;
+        const okQ = !q || card.innerText.includes(q);
         card.classList.toggle('hidden', !(okCat && okQ));
       });
       details.forEach(d => {
-        const cat = d.dataset.cat;
-        const text = d.innerText;
-        const okCat = active === 'all' || cat === active;
-        const okQ = !q || text.includes(q);
+        const okCat = active === 'all' || d.dataset.cat === active;
+        const okQ = !q || d.innerText.includes(q);
         d.classList.toggle('hidden', !(okCat && okQ));
       });
     }
-
     filters.addEventListener('click', (e) => {
       const btn = e.target.closest('.filter');
       if (!btn) return;
