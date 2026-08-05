@@ -4,9 +4,11 @@
 
 ## مشاهدة الدليل
 
-بعد تفعيل GitHub Pages على مجلد `docs`:
+الصفحة العامة للعملاء (GitHub Pages):
 
-**https://smartcodecrew.github.io/zahar2/**
+**https://smartcodecrew.github.io/zahar-theme-guide/**
+
+المستودع العام: https://github.com/smartcodecrew/zahar-theme-guide
 
 أو افتح الملف محلياً: `docs/index.html`
 
