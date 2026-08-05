@@ -40,6 +40,76 @@ SECTIONS = [
 ]
 
 
+HIDE_UI_JS = r"""
+() => {
+  // Close sliding side menu if API exists
+  try {
+    if (window.slidingMenu && typeof window.slidingMenu.close === 'function') {
+      window.slidingMenu.close();
+    }
+  } catch (e) {}
+  try {
+    if (typeof closeSlidingMenu === 'function') closeSlidingMenu();
+  } catch (e) {}
+  try {
+    if (typeof closeSearchBox === 'function') closeSearchBox();
+  } catch (e) {}
+
+  const hide = (el) => {
+    if (!el) return;
+    el.style.setProperty('display', 'none', 'important');
+    el.style.setProperty('visibility', 'hidden', 'important');
+    el.style.setProperty('opacity', '0', 'important');
+    el.style.setProperty('pointer-events', 'none', 'important');
+    el.setAttribute('aria-hidden', 'true');
+    el.classList.remove('active', 'open', 'show', 'is-open', 'sm-open');
+  };
+
+  [
+    '#sliding-menu',
+    '#sidenav-overlay',
+    '.slide-menu',
+    '.sliding-menu',
+    '[class*="slide-menu"]',
+    '.sub-menu-block',
+    '.dropdown-menu.show',
+    '.sm-search-div',
+    '.sm-search-div.show',
+    '.sm-search-div.active',
+    '.search-down-div',
+    '.autocomplete-items',
+  ].forEach((sel) => document.querySelectorAll(sel).forEach(hide));
+
+  // Clear hover states that keep mega-menu open
+  document.querySelectorAll('.top-level-link, .main-nav > li').forEach((el) => {
+    el.classList.remove('hover', 'open', 'active', 'show');
+  });
+
+  // Force animations visible + unstick header
+  document.querySelectorAll('.scroll-animate').forEach((el) => {
+    el.classList.add('animated', 'in-view', 'visible');
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.visibility = 'visible';
+  });
+  const h = document.querySelector('header.header-head');
+  if (h) {
+    h.style.setProperty('position', 'relative', 'important');
+    h.style.setProperty('top', '0', 'important');
+  }
+  document
+    .querySelectorAll('[class*="whatsapp"], .back-to-top, #backToTop, .floating-whatsapp')
+    .forEach(hide);
+}
+"""
+
+
+async def hide_overlays(page):
+    await page.mouse.move(0, 0)
+    await page.keyboard.press("Escape")
+    await page.evaluate(HIDE_UI_JS)
+
+
 async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
@@ -47,26 +117,20 @@ async def main():
         print("goto…")
         await page.goto(URL, wait_until="networkidle", timeout=120000)
         await page.wait_for_timeout(2500)
+        await hide_overlays(page)
+        await page.wait_for_timeout(500)
 
-        # Force animations visible + unstick header
-        await page.evaluate(
+        # Verify menu is gone
+        menu_state = await page.evaluate(
             """() => {
-            document.querySelectorAll('.scroll-animate').forEach(el => {
-              el.classList.add('animated','in-view','visible');
-              el.style.opacity = '1';
-              el.style.transform = 'none';
-              el.style.visibility = 'visible';
-            });
-            const h = document.querySelector('header.header-head');
-            if (h) {
-              h.style.setProperty('position','relative','important');
-              h.style.setProperty('top','0','important');
-            }
-            document.querySelectorAll('[class*=\"whatsapp\"], .back-to-top, #backToTop').forEach(el => {
-              el.style.setProperty('display','none','important');
-            });
+            const m = document.getElementById('sliding-menu');
+            if (!m) return {missing:true};
+            const r = m.getBoundingClientRect();
+            const s = getComputedStyle(m);
+            return {display:s.display, visibility:s.visibility, w:Math.round(r.width), h:Math.round(r.height), x:Math.round(r.left)};
         }"""
         )
+        print("menu_state", menu_state)
 
         for key, target in SECTIONS:
             if target.startswith("css="):
@@ -75,37 +139,56 @@ async def main():
                 sel = f'[section-id="{target}"]'
             loc = page.locator(sel).first
             try:
+                await hide_overlays(page)
                 await loc.scroll_into_view_if_needed(timeout=15000)
-                await page.wait_for_timeout(400)
-                # expand explore etc.
+                await page.wait_for_timeout(350)
+                # Only unhide scroll-animate within the target — never force-show overlays
                 await page.evaluate(
                     """(sel) => {
                     const el = document.querySelector(sel);
                     if (!el) return;
-                    el.style.opacity='1'; el.style.visibility='visible';
-                    el.querySelectorAll('*').forEach(n => {
-                      n.style.opacity='1'; n.style.visibility='visible'; n.style.transform='none';
+                    el.querySelectorAll('.scroll-animate').forEach(n => {
+                      n.style.opacity='1';
+                      n.style.visibility='visible';
+                      n.style.transform='none';
                     });
                 }""",
                     sel,
                 )
+                await hide_overlays(page)
                 await page.wait_for_timeout(200)
                 box = await loc.bounding_box()
                 if not box or box["height"] < 30:
                     print(f"SKIP {key} height={box}")
                     continue
                 out = OUT / f"{key}.png"
-                # Cap very tall sections
-                if box["height"] > 1600:
-                    await loc.screenshot(path=str(out), timeout=60000)
-                else:
-                    await loc.screenshot(path=str(out), timeout=60000)
+                await loc.screenshot(path=str(out), timeout=60000)
                 size = out.stat().st_size
                 print(f"OK {key} {int(box['width'])}x{int(box['height'])} -> {size} bytes")
             except Exception as e:
                 print(f"FAIL {key}: {e}")
 
-        # Try optional sections not always present
+        # Overview viewport shots for hero gallery (menu closed)
+        await hide_overlays(page)
+        await page.evaluate("window.scrollTo(0,0)")
+        await page.wait_for_timeout(400)
+        await hide_overlays(page)
+        overview = OUT.parent
+        await page.screenshot(path=str(overview / "preview-hero.png"), full_page=False)
+
+        # products tabs area
+        await page.locator('[section-id="e52ee2c2-950c-4b2c-965d-ba16345dc864"]').first.scroll_into_view_if_needed()
+        await hide_overlays(page)
+        await page.wait_for_timeout(300)
+        await page.screenshot(path=str(overview / "preview-products.png"), full_page=False)
+
+        # before-after area
+        await page.locator('[section-id="ff1296e3-380a-45a5-9cc6-690b70d46c77"]').first.scroll_into_view_if_needed()
+        await hide_overlays(page)
+        await page.wait_for_timeout(300)
+        await page.screenshot(path=str(overview / "preview-before-after.png"), full_page=False)
+        print("overview shots refreshed")
+
         optional = [
             ("ticker", ".ticker-section, [class*='ticker']"),
             ("reels-section", ".reels-section, [class*='reels-section']"),
@@ -117,7 +200,9 @@ async def main():
                 if await loc.count() == 0:
                     print(f"MISS {key}")
                     continue
+                await hide_overlays(page)
                 await loc.scroll_into_view_if_needed(timeout=5000)
+                await hide_overlays(page)
                 await page.wait_for_timeout(300)
                 out = OUT / f"{key}.png"
                 await loc.screenshot(path=str(out), timeout=30000)
